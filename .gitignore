@@ -9,3 +9,10 @@ instagram_icerik_plani.md
 seo_analiz_raporu.md
 
 public/ChatGPT Image*.png
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
