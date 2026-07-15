@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SectionHeading from "../components/ui/SectionHeading.astro";
 import Button from "../components/ui/Button.astro";
@@ -6,6 +7,9 @@ import Accordion from "../components/ui/Accordion";
 import { siteConfig } from "../config/site";
 import { faqList } from "../data/faq";
 import { labSteps, safetyWarnings, substancesList } from "../data/apiterapi";
+
+// Local assets
+import apiterapiHeroImg from "../assets/apiterapi-hero.png";
 
 // Filter apitherapy related FAQs
 const apiterapiFaq = faqList.filter(f => f.category === "apiterapi");
@@ -34,7 +38,7 @@ const apiterapiFaq = faqList.filter(f => f.category === "apiterapi");
       </div>
       <div class="hero-visual-block scroll-fade animate-in">
         <div class="apiterapi-hero-image-wrapper">
-          <img src="/apiterapi-hero.png" alt="Eylül Arıcılık Apiterapi Laboratuvarı Araştırmacısı" class="apiterapi-hero-img" />
+          <Image src={apiterapiHeroImg} alt="Eylül Arıcılık Apiterapi Laboratuvarı Araştırmacısı" class="apiterapi-hero-img" loading="eager" />
         </div>
       </div>
     </div>
@@ -54,7 +58,7 @@ const apiterapiFaq = faqList.filter(f => f.category === "apiterapi");
       </div>
       <div class="editorial-side scroll-fade">
         <div class="lab-facts-box">
-          <h4>Laboratuvar Prensiplerimiz</h4>
+          <h3>Laboratuvar Prensiplerimiz</h3>
           <ul class="facts-list">
             <li>
               <strong>Sıfır Alkol:</strong> Propolis ekstraksiyonlarımızda çözücü olarak asla alkol veya ağır kimyasal bileşenler kullanılmaz, su bazlı formül tercih edilir.
@@ -434,7 +438,7 @@ const apiterapiFaq = faqList.filter(f => f.category === "apiterapi");
     box-shadow: var(--shadow-card);
   }
 
-  .lab-facts-box h4 {
+  .lab-facts-box h3 {
     font-size: 1.1rem;
     color: var(--color-brown-900);
     margin-bottom: var(--space-3);

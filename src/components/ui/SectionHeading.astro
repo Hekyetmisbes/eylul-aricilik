@@ -6,6 +6,7 @@ interface Props {
   align?: "center" | "left";
   className?: string;
   dark?: boolean;
+  level?: "h1" | "h2" | "h3";
 }
 
 const {
@@ -14,13 +15,16 @@ const {
   description,
   align = "center",
   className = "",
-  dark = false
+  dark = false,
+  level = "h2"
 } = Astro.props;
+
+const HeadingTag = level;
 ---
 
 <div class={`section-heading align-${align} ${dark ? "heading-dark" : ""} ${className}`}>
   {tagline && <span class="heading-tagline">{tagline}</span>}
-  <h2 class="heading-title">{title}</h2>
+  <HeadingTag class="heading-title">{title}</HeadingTag>
   {description && <p class="heading-description">{description}</p>}
 </div>
 

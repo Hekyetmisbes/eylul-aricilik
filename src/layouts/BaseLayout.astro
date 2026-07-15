@@ -58,6 +58,44 @@ const pageTitle = title ? `${title} | ${siteConfig.name}` : `${siteConfig.name} 
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Structured Data (JSON-LD LocalBusiness Schema) -->
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": siteConfig.name,
+      "image": "https://eylularicilik.com/logo.png",
+      "@id": "https://eylularicilik.com",
+      "url": "https://eylularicilik.com",
+      "telephone": siteConfig.phone.replace(/\s+/g, ""),
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Selamverdi Mah. Atatürk Cad.",
+        "addressLocality": siteConfig.district,
+        "addressRegion": siteConfig.city,
+        "postalCode": "75600",
+        "addressCountry": "TR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 41.2345679, 
+        "longitude": 42.8467136
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "08:00",
+        "closes": "20:00"
+      }
+    })} />
   </head>
   <body>
     <!-- Skip to Content for Screen Readers -->

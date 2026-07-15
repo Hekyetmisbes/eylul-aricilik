@@ -1,5 +1,7 @@
 ---
+import { Image } from "astro:assets";
 import { siteConfig } from "../../config/site";
+import logoImg from "../../assets/logo.png";
 
 const currentPath = Astro.url.pathname;
 const isHome = currentPath === "/";
@@ -9,7 +11,7 @@ const isHome = currentPath === "/";
   <div class="container header-container">
     <!-- Logo -->
     <a href="/" class="logo-link" aria-label="Eylül Arıcılık Ana Sayfa">
-      <img src="/logo.png" alt="Eylül Arıcılık Logo" class="brand-logo" />
+      <Image src={logoImg} alt="Eylül Arıcılık Logo" class="brand-logo" loading="eager" />
     </a>
 
     <!-- Desktop Navigation -->
@@ -62,7 +64,7 @@ const isHome = currentPath === "/";
     <div class="drawer-content">
       <div class="drawer-header">
         <div class="logo-wrapper">
-          <img src="/logo.png" alt="Eylül Arıcılık Logo" class="brand-logo mobile-logo" />
+          <Image src={logoImg} alt="Eylül Arıcılık Logo" class="brand-logo mobile-logo" loading="eager" />
         </div>
         <button id="menu-close" class="menu-close" aria-label="Menüyü Kapat">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">

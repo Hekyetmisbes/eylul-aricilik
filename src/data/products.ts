@@ -29,7 +29,7 @@ export const products: Product[] = [
     ],
     storage: "Serin, kuru ve ışık almayan oda sıcaklığında (18-24°C) saklayınız. Balın kristalleşmesi doğal bir durumdur ve saflığının göstergesidir.",
     warning: "1 yaşından küçük bebeklere bal yedirilmemelidir. Arı ürünlerine karşı alerjisi veya hassasiyeti olan kişilerin dikkatli tüketmesi önerilir.",
-    image: "https://images.unsplash.com/photo-1587049352851-8d4e89134292?auto=format&fit=crop&w=600&q=80",
+    image: "/assets/products-webp/hanak-karakovan-bali.webp",
     imageAlt: "Hanak Karakovan Balı ahşap kasnakta doğal petek görünümü",
     featured: true
   },
@@ -48,7 +48,7 @@ export const products: Product[] = [
     ],
     storage: "Oda sıcaklığında, nemden uzak ve doğrudan güneş ışığı almayan alanlarda muhafaza ediniz.",
     warning: "1 yaşından küçük çocukların tüketimine uygun değildir.",
-    image: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?auto=format&fit=crop&w=600&q=80",
+    image: "/assets/products-webp/suzme-cicek-bali-hanak.webp",
     imageAlt: "Hanak Yayla Süzme Çiçek Balı kavanozu",
     featured: true
   },
@@ -67,7 +67,7 @@ export const products: Product[] = [
     ],
     storage: "Oda sıcaklığında, kuru yerde muhafaza ediniz. Güneş ışığından koruyunuz.",
     warning: "Arı ürünlerine alerjisi olanlarda alerjik reaksiyon riski taşıyabilir. Astım ve ağır alerji geçmişi olan kişilerin kullanım öncesinde doktora danışması önerilir. İlaç değildir.",
-    image: "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=600&q=80",
+    image: "/assets/products-webp/su-bazli-sivi-propolis-ozutu.webp",
     imageAlt: "Damlalıklı cam şişede su bazlı sıvı propolis özütü",
     featured: true
   },
@@ -86,7 +86,7 @@ export const products: Product[] = [
     ],
     storage: "Serin ve kuru yerde saklayınız. Paketi açıldıktan sonra buzdolabında muhafaza edilmesi ve 6 ay içinde tüketilmesi önerilir.",
     warning: "Arı ürünleri alerjisi olanlar için uygun değildir. Kronik rahatsızlığı olanların ve hamilelerin uzman bir hekime danışarak tüketmesi tavsiye edilir.",
-    image: "https://images.unsplash.com/photo-1590779037667-27156093cf37?auto=format&fit=crop&w=600&q=80",
+    image: "/assets/products-webp/taze-ari-ekmegi-perga.webp",
     imageAlt: "Doğal taneli arı ekmeği perga",
     featured: true
   },
@@ -105,7 +105,7 @@ export const products: Product[] = [
     ],
     storage: "Kuru, serin ve karanlık bir yerde ağzı sıkıca kapalı olarak saklayınız. Uzun süreli muhafaza için buzdolabında saklanması önerilir.",
     warning: "Polen alerjisi olan veya saman nezlesi gibi kronik alerjisi bulunan kişilerin tüketmesi önerilmez. 1 yaşından küçük çocuklara verilmemelidir.",
-    image: "https://images.unsplash.com/photo-1513530534585-c7b1394c6d51?auto=format&fit=crop&w=600&q=80",
+    image: "/assets/products-webp/kurutulmus-saf-yayla-poleni.webp",
     imageAlt: "Renkli tanelerden oluşan doğal yayla poleni",
     featured: false
   },
@@ -124,7 +124,7 @@ export const products: Product[] = [
     ],
     storage: "Mutlaka buzdolabında (2-4°C) saklanmalı, dondurularak saklanacaksa (-18°C) derin dondurucuda tutulmalıdır. Metal kaşıkla temas ettirilmemeli, tahta veya plastik kaşık kullanılmalıdır.",
     warning: "Çok güçlü bir biyoaktif miktar barındırdığından arı ürünlerine aşırı hassasiyeti olanlar, astım hastaları ve kanser hastalarının doktor kontrolünde kullanması gerekir. 2 yaş altı çocuklara önerilmez.",
-    image: "https://images.unsplash.com/photo-1611080626919-7cf5a9dbab5b?auto=format&fit=crop&w=600&q=80",
+    image: "/assets/products-webp/taze-saf-ari-sutu.webp",
     imageAlt: "Küçük şişede saf arı sütü ve tahta kaşık",
     featured: false
   },
@@ -143,7 +143,7 @@ export const products: Product[] = [
     ],
     storage: "Çocukların ulaşamayacağı, güneş görmeyen serin bir yerde muhafaza ediniz. Kapağını açık bırakmayınız.",
     warning: "Arı sokmasına karşı aşırı duyarlılığı (alerjisi) olan kişilerin kesinlikle kullanmaması gerekir. Açık yaralara, göz çevresine ve hassas mukoza bölgelerine uygulamayınız. Kullanmadan önce cildin küçük bir bölümünde test ediniz.",
-    image: "https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?auto=format&fit=crop&w=600&q=80",
+    image: "/assets/products-webp/ari-zehri-katkili-masaj-kremi.webp",
     imageAlt: "Arı zehri katkılı krem kutusu",
     featured: false
   },
@@ -162,7 +162,7 @@ export const products: Product[] = [
     ],
     storage: "Kuru ve aşırı sıcaktan uzak alanlarda saklayınız. Erime sıcaklığı yaklaşık 62-65°C'dir.",
     warning: "Tüketim amacıyla değil, haricen kullanım veya hammadde amacıyla üretilmiştir.",
-    image: "https://images.unsplash.com/photo-1508885368104-a287c2b453e0?auto=format&fit=crop&w=600&q=80",
+    image: "/assets/products-webp/dogal-saf-balmumu.webp",
     imageAlt: "Doğal kalıplar halinde saf sarı balmumu",
     featured: false
   },
@@ -181,7 +181,7 @@ export const products: Product[] = [
     ],
     storage: "Kullanım sonrasında içindeki kül ve kömür kalıntılarını temizleyerek kuru bir yerde asarak saklayınız.",
     warning: "Körük yakılırken yangın tehlikeine karşı dikkatli olunmalı, kovan kontrolleri bittiğinde körüğün tamamen söndüğünden emin olunmalıdır.",
-    image: "https://images.unsplash.com/photo-1608797178974-15b35a61d121?auto=format&fit=crop&w=600&q=80",
+    image: "/assets/products-webp/profesyonel-paslanmaz-arici-korugu.webp",
     imageAlt: "Paslanmaz çelik arıcı körüğü duman çıkışı",
     featured: false
   },
@@ -199,7 +199,7 @@ export const products: Product[] = [
       "Kullanışlı alet cepleri"
     ],
     storage: "Kuru ortamda asarak saklayınız. Maske kısmını elde, tulum gövdesini ise çamaşır makinesinde düşük ısıda yıkayabilirsiniz.",
-    image: "https://images.unsplash.com/photo-1587049352851-8d4e89134292?auto=format&fit=crop&w=600&q=80",
+    image: "/assets/products-webp/maskeli-gabardin-arici-tulumu.webp",
     imageAlt: "Astronot maskeli beyaz gabardin arıcı tulumu",
     featured: false
   },
@@ -217,7 +217,7 @@ export const products: Product[] = [
       "Bulaşık makinesinde yıkanabilir ve sterilize edilebilir"
     ],
     storage: "Kullanım öncesinde yıkayıp tamamen kuruttuğunuzdan emin olunuz. Nemli kavanozlara bal doldurmayınız.",
-    image: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=600&q=80",
+    image: "/assets/products-webp/metal-kapakli-bal-kavanozu-500cc.webp",
     imageAlt: "Sarı kapaklı 500cc şeffaf cam kavanoz",
     featured: false
   },
@@ -235,7 +235,7 @@ export const products: Product[] = [
       "Uçuş tahtası ve kovan kilitleme aparatları dahil"
     ],
     storage: "Kovanların dış yüzeylerinin arılara zarar vermeyecek su bazlı dış cephe boyaları ile boyanarak kullanılması kovan ömrünü uzatır.",
-    image: "https://images.unsplash.com/photo-1473081556163-2a17de81fc97?auto=format&fit=crop&w=600&q=80",
+    image: "/assets/products-webp/langstroth-tipi-ahsap-kovan.webp",
     imageAlt: "Taban havalandırmalı ahşap Langstroth tipi arı kovanı",
     featured: false
   },
@@ -253,7 +253,7 @@ export const products: Product[] = [
       "Çatlama ve esnemeye karşı kanallı tasarım"
     ],
     storage: "Kuru ve nemsiz ortamlarda, kovan zararlılarından uzak alanlarda muhafaza ediniz.",
-    image: "https://images.unsplash.com/photo-1587049352851-8d4e89134292?auto=format&fit=crop&w=600&q=80",
+    image: "/assets/products-webp/citali-ahsap-ari-cercevesi.webp",
     imageAlt: "Boş arı kovanı çerçevesi",
     featured: false
   },
@@ -271,7 +271,7 @@ export const products: Product[] = [
       "Kolay montaj için geçmeli zıvana yapısı"
     ],
     storage: "Nem almayan, rutubetsiz kapalı depo alanlarında saklayınız.",
-    image: "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=600&q=80",
+    image: "/assets/products-webp/demonte-kovan-cerceve-citasi.webp",
     imageAlt: "Demonte arıcılık çıtaları",
     featured: false
   },
@@ -289,7 +289,7 @@ export const products: Product[] = [
       "Taşıma kulpları hazır açılmıştır"
     ],
     storage: "Kullanım ömrünü uzatmak için dış yüzeyinin su bazlı arı dostu boya ile boyanması tavsiye edilir.",
-    image: "https://images.unsplash.com/photo-1473081556163-2a17de81fc97?auto=format&fit=crop&w=600&q=80",
+    image: "/assets/products-webp/ahsap-kovan-govdesi-kati.webp",
     imageAlt: "Ahşap kovan katı ve ballık",
     featured: false
   },
@@ -307,7 +307,7 @@ export const products: Product[] = [
       "Maksimum ısı izolasyonu ile hızlı koloni gelişimi"
     ],
     storage: "Doğrudan güneş ışığına uzun süre maruz bırakılmamalı, kullanılmadığında gölgede saklanmalıdır.",
-    image: "https://images.unsplash.com/photo-1507646227500-4d389b0012be?auto=format&fit=crop&w=600&q=80",
+    image: "/assets/products-webp/strafor-ruset-kovan.webp",
     imageAlt: "Strafor ruşet arı kovanı",
     featured: false
   },
@@ -325,7 +325,7 @@ export const products: Product[] = [
       "Uçuş tahtası ve giriş engelleyici aparat dahil"
     ],
     storage: "Kullanım dışı dönemlerde tazyikli suyla yıkanıp dezenfekte edilerek kuru depoda saklanmalıdır.",
-    image: "https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?auto=format&fit=crop&w=600&q=80",
+    image: "/assets/products-webp/plastik-polen-tuzakli-kovan-tabani.webp",
     imageAlt: "Polen tuzaklı plastik kovan tabanı",
     featured: false
   },
@@ -343,7 +343,7 @@ export const products: Product[] = [
       "Kolay temizlenebilir ve hijyenik plastik yapı"
     ],
     storage: "Yıkandıktan sonra üst üste istiflenerek serin ve güneş görmeyen depolarda saklanmalıdır.",
-    image: "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=600&q=80",
+    image: "/assets/products-webp/kovan-ustu-plastik-surupluk.webp",
     imageAlt: "Kovan üstü arı şurupluğu",
     featured: false
   },
@@ -361,7 +361,7 @@ export const products: Product[] = [
       "Kırılmayı önleyen ideal esneklik ve kalınlık"
     ],
     storage: "Oda sıcaklığında (18-22°C), yatay olarak düz bir zeminde, doğrudan güneş ışığı almayan ve fare gibi kemirgenlerin ulaşamayacağı yerlerde saklayınız.",
-    image: "https://images.unsplash.com/photo-1587049352851-8d4e89134292?auto=format&fit=crop&w=600&q=80",
+    image: "/assets/products-webp/steril-temel-petek-levhasi.webp",
     imageAlt: "Balmumu temel petek levhası",
     featured: false
   },
@@ -379,7 +379,7 @@ export const products: Product[] = [
       "Temel peteği ısıtarak tele yapıştırma işlemlerine uygun elektrik iletkenliği"
     ],
     storage: "Rutubetsiz ve kuru yerlerde, orijinal ambalajı içinde muhafaza ediniz.",
-    image: "https://images.unsplash.com/photo-1516216628859-9bccecab13ca?auto=format&fit=crop&w=600&q=80",
+    image: "/assets/products-webp/makarali-galvaniz-cerceve-teli.webp",
     imageAlt: "Makaralı arıcı çerçeve teli",
     featured: false
   },
@@ -397,7 +397,7 @@ export const products: Product[] = [
       "Kolay görünür kırmızı veya sarı boyalı sap kısmı"
     ],
     storage: "Kullanım sonrasında üzerindeki propolis ve balmumu kalıntıları temizlenerek alet çantasında saklanmalıdır.",
-    image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=600&q=80",
+    image: "/assets/products-webp/kovan-el-demiri-spatula.webp",
     imageAlt: "Paslanmaz çelik kovan el demiri",
     featured: false
   },
@@ -415,7 +415,7 @@ export const products: Product[] = [
       "Çift sıra kıl dizilimi ile etkin süpürme"
     ],
     storage: "Kullanım sonrasında ballı kılları ılık suyla yıkayıp kurutarak asarak saklayınız.",
-    image: "https://images.unsplash.com/photo-1520038410233-7141be7e6f97?auto=format&fit=crop&w=600&q=80",
+    image: "/assets/products-webp/ahsap-sapli-yumusak-ari-fircasi.webp",
     imageAlt: "Ahşap saplı yumuşak arı fırçası",
     featured: false
   },
@@ -433,7 +433,7 @@ export const products: Product[] = [
       "Ön kısımda kovan el demiri ve alet cepleri"
     ],
     storage: "Kuru ortamda askıda muhafaza ediniz. Maske kısmını çıkarıp elde yıkayabilirsiniz.",
-    image: "https://images.unsplash.com/photo-1587049352851-8d4e89134292?auto=format&fit=crop&w=600&q=80",
+    image: "/assets/products-webp/maskeli-gabardin-arici-ceketi.webp",
     imageAlt: "Astronot maskeli arıcı ceketi",
     featured: false
   },
@@ -451,7 +451,7 @@ export const products: Product[] = [
       "Arıların içeri girmesini önleyen sıkı bilek lastiği"
     ],
     storage: "Kullanımdan sonra kuru bir bezle silip pudralayarak nemden uzak serin yerde saklayınız. Makinede yıkanmamalıdır.",
-    image: "https://images.unsplash.com/photo-1595079676339-1534801ad6cf?auto=format&fit=crop&w=600&q=80",
+    image: "/assets/products-webp/hakiki-deri-aricilik-eldiveni.webp",
     imageAlt: "Deri koruyucu arıcılık eldiveni",
     featured: false
   },
@@ -469,7 +469,7 @@ export const products: Product[] = [
       "Kolay temizlenebilir paslanmaz metal gövde"
     ],
     storage: "Bal kalıntılarının kurumaması için kullanımdan hemen sonra sıcak suyla yıkayıp kurutarak saklayınız.",
-    image: "https://images.unsplash.com/photo-1610970881699-44a55b4cfd87?auto=format&fit=crop&w=600&q=80",
+    image: "/assets/products-webp/paslanmaz-celik-bal-suzgeci.webp",
     imageAlt: "Paslanmaz çift katlı bal süzgeci",
     featured: false
   },
@@ -487,7 +487,7 @@ export const products: Product[] = [
       "Sağlam taşıma kulpları"
     ],
     storage: "Temizlendikten sonra kuru bir alanda, üzeri örtülü olarak saklanmalıdır.",
-    image: "https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?auto=format&fit=crop&w=600&q=80",
+    image: "/assets/products-webp/celik-bal-dinlendirme-kazani.webp",
     imageAlt: "Paslanmaz çelik bal dinlendirme kazanı",
     featured: false
   },
@@ -505,7 +505,7 @@ export const products: Product[] = [
       "Arıların kolayca tüketebileceği ideal kıvam"
     ],
     storage: "Doğrudan güneş görmeyen, serin ve kuru bir yerde muhafaza ediniz. Açılan paketleri kısa sürede tüketiniz.",
-    image: "https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec?auto=format&fit=crop&w=600&q=80",
+    image: "/assets/products-webp/vitamin-mineral-katkili-ari-keki.webp",
     imageAlt: "Paketli arı keki ve besleme ürünü",
     featured: false
   },
@@ -523,7 +523,7 @@ export const products: Product[] = [
       "Pratik bidon ambalajlarda kolay taşıma ve kullanım"
     ],
     storage: "Serin bir ortamda saklanmalı, donmaya veya aşırı sıcağa maruz bırakılmamalıdır.",
-    image: "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=600&q=80",
+    image: "/assets/products-webp/koloni-destekleyici-sivi-ari-yemi.webp",
     imageAlt: "Arı şurubu sıvı besleme ürünü",
     featured: false
   }

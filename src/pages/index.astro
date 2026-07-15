@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SectionHeading from "../components/ui/SectionHeading.astro";
 import Button from "../components/ui/Button.astro";
@@ -8,6 +9,11 @@ import { siteConfig } from "../config/site";
 import { categories } from "../data/categories";
 import { products } from "../data/products";
 import { faqList } from "../data/faq";
+
+// Local assets
+import homeHeroImg from "../assets/home-hero.png";
+import apiterapiHeroImg from "../assets/apiterapi-hero.png";
+import storeInteriorImg from "../assets/store-interior.png";
 
 // Filter only featured products (first 4 items)
 const featuredProducts = products.filter(p => p.featured).slice(0, 4);
@@ -36,7 +42,7 @@ const generalFaq = faqList.filter(f => f.category === "genel" || f.category === 
       </div>
       <div class="hero-image-block scroll-fade animate-in">
         <div class="hero-image-frame-container">
-          <img src="/home-hero.png" alt="Hanak Eylül Arıcılık Doğal Ürünleri" class="hero-brand-img" />
+          <Image src={homeHeroImg} alt="Hanak Eylül Arıcılık Doğal Ürünleri" class="hero-brand-img" loading="eager" />
         </div>
       </div>
     </div>
@@ -50,7 +56,7 @@ const generalFaq = faqList.filter(f => f.category === "genel" || f.category === 
           <div class="badge-icon-circle">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
           </div>
-          <h3>%100 Doğal</h3>
+          <h2>%100 Doğal</h2>
           <p>Hanak yaylalarında hiçbir yapay besleme veya kimyasal katkı olmadan üretilir.</p>
         </div>
 
@@ -58,7 +64,7 @@ const generalFaq = faqList.filter(f => f.category === "genel" || f.category === 
           <div class="badge-icon-circle">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
           </div>
-          <h3>Kontrollü Üretim</h3>
+          <h2>Kontrollü Üretim</h2>
           <p>Kovandan şişelemeye kadar tüm süreçler kayıt altında ve denetime tabidir.</p>
         </div>
 
@@ -66,7 +72,7 @@ const generalFaq = faqList.filter(f => f.category === "genel" || f.category === 
           <div class="badge-icon-circle">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
           </div>
-          <h3>Hijyenik Laboratuvar</h3>
+          <h2>Hijyenik Laboratuvar</h2>
           <p>Propolis ve özel formüllerimiz modern laboratuvar cihazlarıyla steril ortamda ekstrakte edilir.</p>
         </div>
 
@@ -74,7 +80,7 @@ const generalFaq = faqList.filter(f => f.category === "genel" || f.category === 
           <div class="badge-icon-circle">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
           </div>
-          <h3>Yerel Deneyim</h3>
+          <h2>Yerel Deneyim</h2>
           <p>Yılların pratik arıcılık birikimini akademik ve bilimsel ilkelerle birleştiriyoruz.</p>
         </div>
       </div>
@@ -155,7 +161,7 @@ const generalFaq = faqList.filter(f => f.category === "genel" || f.category === 
     <div class="container lab-grid">
       <div class="lab-image-block scroll-fade">
         <div class="lab-image-wrapper-home">
-          <img src="/apiterapi-hero.png" alt="Eylül Arıcılık Apiterapi Laboratuvarı" class="lab-home-img" />
+          <Image src={apiterapiHeroImg} alt="Eylül Arıcılık Apiterapi Laboratuvarı" class="lab-home-img" loading="lazy" />
         </div>
       </div>
       <div class="lab-content-block scroll-fade">
@@ -194,7 +200,7 @@ const generalFaq = faqList.filter(f => f.category === "genel" || f.category === 
       </div>
       <div class="story-visual scroll-fade">
         <div class="story-image-wrapper-home">
-          <img src="/store-interior.png" alt="Eylül Arıcılık Hanak Mağazası" class="story-home-img" />
+          <Image src={storeInteriorImg} alt="Eylül Arıcılık Hanak Mağazası" class="story-home-img" loading="lazy" />
           <div class="story-box-overlay">
             <div class="story-quote">
               <span class="quote-mark">&ldquo;</span>
@@ -220,22 +226,22 @@ const generalFaq = faqList.filter(f => f.category === "genel" || f.category === 
       <div class="process-steps-preview-grid">
         <div class="step-preview-card scroll-fade">
           <span class="step-num">01</span>
-          <h4>Kovan Kontrolü</h4>
+          <h3>Kovan Kontrolü</h3>
           <p>Arılarımızın sağlığı ve kovan temizliği, pestisit ve kimyasal kullanılmadan düzenli denetlenir.</p>
         </div>
         <div class="step-preview-card scroll-fade">
           <span class="step-num">02</span>
-          <h4>Analiz ve Ayrıştırma</h4>
+          <h3>Analiz ve Ayrıştırma</h3>
           <p>Toplanan balların nem oranları ve propolisin etken bileşen değerleri laboratuvarda ölçülür.</p>
         </div>
         <div class="step-preview-card scroll-fade">
           <span class="step-num">03</span>
-          <h4>Soğuk Süzüm & Ekstraksiyon</h4>
+          <h3>Soğuk Süzüm & Ekstraksiyon</h3>
           <p>Ballar ısıl işlem görmeden soğuk süzülür, propolis ise özel alkolsüz su formülüyle çözündürülür.</p>
         </div>
         <div class="step-preview-card scroll-fade">
           <span class="step-num">04</span>
-          <h4>Steril Şişeleme</h4>
+          <h3>Steril Şişeleme</h3>
           <p>Emniyet kilitli, gıdaya uygun damlalıklı cam şişelerde el değmeden paketlenip etiketlenir.</p>
         </div>
       </div>
@@ -448,7 +454,7 @@ const generalFaq = faqList.filter(f => f.category === "genel" || f.category === 
     margin-bottom: var(--space-2);
   }
 
-  .badge-card h3 {
+  .badge-card h2 {
     font-size: 1.1rem;
     color: var(--color-brown-900);
     margin-bottom: 0;
@@ -828,7 +834,7 @@ const generalFaq = faqList.filter(f => f.category === "genel" || f.category === 
     font-family: "Manrope", sans-serif;
   }
 
-  .step-preview-card h4 {
+  .step-preview-card h3 {
     font-size: 1.05rem;
     margin-bottom: var(--space-2);
     color: var(--color-brown-900);

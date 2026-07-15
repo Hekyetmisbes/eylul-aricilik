@@ -1,5 +1,7 @@
 ---
+import { Image } from "astro:assets";
 import { siteConfig } from "../../config/site";
+import logoWhiteImg from "../../assets/logo-white.png";
 
 const currentYear = new Date().getFullYear();
 ---
@@ -9,7 +11,7 @@ const currentYear = new Date().getFullYear();
     <!-- Brand column -->
     <div class="footer-col brand-col">
       <a href="/" class="footer-logo-link" aria-label="Eylül Arıcılık Ana Sayfa">
-        <img src="/logo-white.png" alt="Eylül Arıcılık Logo" class="brand-logo footer-logo" />
+        <Image src={logoWhiteImg} alt="Eylül Arıcılık Logo" class="brand-logo footer-logo" loading="lazy" />
       </a>
       <p class="brand-description">
         Hanak'ın zengin yayla florasından gelen şifayı, modern laboratuvar ortamımızda bilimsel ve kontrollü yöntemlerle sizlere sunuyoruz.

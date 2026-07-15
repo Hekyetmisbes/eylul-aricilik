@@ -1,9 +1,13 @@
 ---
+import { Image } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SectionHeading from "../components/ui/SectionHeading.astro";
 import Button from "../components/ui/Button.astro";
 import ContactForm from "../components/forms/ContactForm";
 import { siteConfig } from "../config/site";
+
+// Local assets
+import storeInteriorImg from "../assets/store-interior.png";
 ---
 
 <BaseLayout
@@ -17,6 +21,7 @@ import { siteConfig } from "../config/site";
         title="Bize Ulaşın"
         tagline="İletişim Kanalları"
         description="Ürünlerimiz, laboratuvarımız ve arıcılık faaliyetlerimizle ilgili tüm sorularınız için bizimle iletişime geçebilirsiniz."
+        level="h1"
       />
     </div>
   </section>
@@ -92,7 +97,7 @@ import { siteConfig } from "../config/site";
         </div>
 
         <div class="contact-store-image-wrapper">
-          <img src="/store-interior.png" alt="Eylül Arıcılık Hanak Mağazası" class="contact-store-img" />
+          <Image src={storeInteriorImg} alt="Eylül Arıcılık Hanak Mağazası" class="contact-store-img" loading="lazy" />
         </div>
       </div>
 

@@ -1,9 +1,14 @@
 ---
+import { Image } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SectionHeading from "../components/ui/SectionHeading.astro";
 import Button from "../components/ui/Button.astro";
 import Badge from "../components/ui/Badge.astro";
 import { siteConfig } from "../config/site";
+
+// Local assets
+import storeInteriorImg from "../assets/store-interior.png";
+import ozgurTopalImg from "../assets/ozgur-topal.png";
 ---
 
 <BaseLayout
@@ -22,7 +27,7 @@ import { siteConfig } from "../config/site";
       </div>
       <div class="hero-visual scroll-fade animate-in">
         <div class="about-hero-image-wrapper">
-          <img src="/store-interior.png" alt="Eylül Arıcılık Hanak Mağaza İçi" class="about-hero-img" />
+          <Image src={storeInteriorImg} alt="Eylül Arıcılık Hanak Mağaza İçi" class="about-hero-img" loading="eager" />
         </div>
       </div>
     </div>
@@ -58,7 +63,7 @@ import { siteConfig } from "../config/site";
     <div class="container founder-grid">
       <div class="founder-visual scroll-fade">
         <div class="founder-image-wrapper">
-          <img src="/ozgur-topal.png" alt="Özgür Topal - Eylül Arıcılık Kurucusu" class="founder-img" />
+          <Image src={ozgurTopalImg} alt="Özgür Topal - Eylül Arıcılık Kurucusu" class="founder-img" loading="lazy" />
         </div>
       </div>
       <div class="founder-info scroll-fade">
@@ -85,7 +90,7 @@ import { siteConfig } from "../config/site";
         <div class="mv-icon-wrapper">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-honey-700)" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
         </div>
-        <h3>Misyonumuz</h3>
+        <h2>Misyonumuz</h2>
         <p>
           Kafkas arı ırkının biyolojik zenginliğini koruyarak, Hanak coğrafyasının saf çiçek nektarını en yüksek hijyenik standartlarda arı ürünlerine dönüştürmek; müşterilerimize tescilli, saflığı analiz edilmiş ve güvenilir gıda takviyeleri sunmaktır.
         </p>
@@ -95,7 +100,7 @@ import { siteConfig } from "../config/site";
         <div class="mv-icon-wrapper">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-honey-700)" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
         </div>
-        <h3>Vizyonumuz</h3>
+        <h2>Vizyonumuz</h2>
         <p>
           Apiterapi laboratuvar altyapımızla Türkiye'de kontrollü arıcılık üretimi denildiğinde akla ilk gelen yerel markalardan biri olmak; Ardahan Hanak balı ve propolisinin bilimsel kalitesini ulusal standartlarda kanıtlayıp sürdürülebilir kılmaktır.
         </p>
@@ -114,25 +119,25 @@ import { siteConfig } from "../config/site";
       <div class="grid-4">
         <div class="value-card scroll-fade">
           <div class="value-num">01</div>
-          <h4>Doğallık ve Saflık</h4>
+          <h3>Doğallık ve Saflık</h3>
           <p>Hiçbir aşamada yapay katkı, koruyucu veya şeker ilavesi yapmadan arının ürettiği saflığı koruruz.</p>
         </div>
 
         <div class="value-card scroll-fade">
           <div class="value-num">02</div>
-          <h4>Bilimsel Denetim</h4>
+          <h3>Bilimsel Denetim</h3>
           <p>Tüm propolis ekstraksiyon süreçlerimizi laboratuvarda kontrollü ölçüm ve saflık kriterleriyle yönetiriz.</p>
         </div>
 
         <div class="value-card scroll-fade">
           <div class="value-num">03</div>
-          <h4>Şeffaflık ve Güven</h4>
+          <h3>Şeffaflık ve Güven</h3>
           <p>Her lot ürünümüzün analiz raporunu, üretim aşamalarını ve menşeini açıkça paylaşarak güven veririz.</p>
         </div>
 
         <div class="value-card scroll-fade">
           <div class="value-num">04</div>
-          <h4>Yerel Sürdürülebilirlik</h4>
+          <h3>Yerel Sürdürülebilirlik</h3>
           <p>Hanak'taki yerel arıcılık faaliyetlerini destekleyerek bölgesel kalkınmaya ve biyolojik çeşitliliğe katkı sağlarız.</p>
         </div>
       </div>
@@ -153,7 +158,7 @@ import { siteConfig } from "../config/site";
         <div class="timeline-item scroll-fade">
           <div class="timeline-badge-year">2016</div>
           <div class="timeline-content">
-            <h4>İlk Kovanlar</h4>
+            <h3>İlk Kovanlar</h3>
             <p>Hanak yaylalarında kısıtlı sayıda kovanla profesyonel arıcılık faaliyetlerine başladık.</p>
           </div>
         </div>
@@ -161,7 +166,7 @@ import { siteConfig } from "../config/site";
         <div class="timeline-item scroll-fade">
           <div class="timeline-badge-year">2019</div>
           <div class="timeline-content">
-            <h4>Ekipman ve Kıyafet Tedariği</h4>
+            <h3>Ekipman ve Kıyafet Tedariği</h3>
             <p>Bölgedeki diğer arıcılara destek amacıyla kaliteli arıcılık ekipmanları ve tulum satışını başlattık.</p>
           </div>
         </div>
@@ -169,7 +174,7 @@ import { siteConfig } from "../config/site";
         <div class="timeline-item scroll-fade">
           <div class="timeline-badge-year">2022</div>
           <div class="timeline-content">
-            <h4>Laboratuvar Altyapısı</h4>
+            <h3>Laboratuvar Altyapısı</h3>
             <p>Propolis ekstraksiyonu ve bal analizleri için modern laboratuvar tesisimizi Hanak'ta kurduk.</p>
           </div>
         </div>
@@ -177,7 +182,7 @@ import { siteConfig } from "../config/site";
         <div class="timeline-item scroll-fade">
           <div class="timeline-badge-year">2026</div>
           <div class="timeline-content">
-            <h4>İzlenebilir Dijital Katalog</h4>
+            <h3>İzlenebilir Dijital Katalog</h3>
             <p>Tüm ürünlerimizi Lot izlenebilirliği standartlarıyla tüketicilere açtığımız bilgilendirme altyapısını tamamladık.</p>
           </div>
         </div>
@@ -359,7 +364,7 @@ import { siteConfig } from "../config/site";
     margin-bottom: var(--space-2);
   }
 
-  .mv-card h3 {
+  .mv-card h2 {
     font-size: 1.2rem;
     color: var(--color-brown-900);
     margin-bottom: 0;
@@ -384,7 +389,7 @@ import { siteConfig } from "../config/site";
     font-family: "Manrope", sans-serif;
   }
 
-  .value-card h4 {
+  .value-card h3 {
     font-size: 1.05rem;
     color: var(--color-brown-900);
     margin-bottom: 0;
@@ -489,7 +494,7 @@ import { siteConfig } from "../config/site";
     }
   }
 
-  .timeline-content h4 {
+  .timeline-content h3 {
     font-size: 1.1rem;
     color: var(--color-brown-900);
     margin-bottom: 4px;
