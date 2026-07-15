@@ -13,11 +13,23 @@ import apiterapiHeroImg from "../assets/apiterapi-hero.png";
 
 // Filter apitherapy related FAQs
 const apiterapiFaq = faqList.filter(f => f.category === "apiterapi");
+const apiterapiFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: apiterapiFaq.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: { "@type": "Answer", text: faq.answer }
+  }))
+};
+const breadcrumbs = [{ label: "Apiterapi", href: "/apiterapi" }];
 ---
 
 <BaseLayout
-  title="Apiterapi Laboratuvarı"
-  description="Eylül Arıcılık apiterapi süreçleri, laboratuvar kontrol standartları, su bazlı propolis ekstraksiyonu ve önemli sağlık/alerji uyarıları."
+  title="Apiterapi Nedir? Laboratuvar ve Arı Ürünleri"
+  description="Apiterapi nedir? Eylül Arıcılık'ta arı ürünleri, laboratuvar süreçleri, su bazlı propolis üretimi ve alerji uyarıları hakkında bilgi edinin."
+  breadcrumbs={breadcrumbs}
+  structuredData={apiterapiFaqSchema}
 >
   <!-- 1. Apitherapy Hero -->
   <section class="apitherapy-hero bg-cream">
@@ -26,7 +38,7 @@ const apiterapiFaq = faqList.filter(f => f.category === "apiterapi");
         <span class="sec-tag">Bilim ve Doğa Buluşması</span>
         <h1 class="editorial-serif">Apiterapi Laboratuvarı ve Kontrollü Üretim</h1>
         <p class="lead">
-          Arıların kovan içi yaşamlarında ürettiği mucizevi salgıları, modern tesisimizde bilimsel kriterlere göre ayrıştırıyor, analiz ediyor ve saflığını bozmadan standardize ediyoruz.
+          Arı ürünlerini modern tesisimizde; hammadde kabulü, analiz, hijyen, izlenebilirlik ve kontrollü paketleme adımlarıyla ele alıyoruz.
         </p>
         <p class="meta-note">
           *Bu sayfadaki içerikler tamamen bilgilendirme amaçlıdır. Apiterapi ürünleri ilaç değildir ve tıbbi tedavilerin yerine kullanılamaz.
@@ -50,10 +62,10 @@ const apiterapiFaq = faqList.filter(f => f.category === "apiterapi");
       <div class="editorial-main scroll-fade">
         <h2 class="editorial-serif">Apiterapi Nedir?</h2>
         <p>
-          Apiterapi, bal arılarının salgıladığı veya doğadan toplayarak kovanlarında olgunlaştırdığı ürünlerin (bal, polen, propolis, arı sütü, arı ekmeği ve arı zehri) insan vücudunun zindeliğini desteklemek ve direnç kazandırmak amacıyla kullanılması disiplinidir. Geleneksel kullanımı binlerce yıl öncesine dayanmaktadır.
+          Apiterapi; bal, polen, propolis, arı sütü, arı ekmeği, balmumu ve arı zehri gibi arı ürünlerinin geleneksel kullanımı ile ürün hazırlama süreçlerini ele alan bilgilendirme alanıdır. Geleneksel kullanımı binlerce yıl öncesine dayanır.
         </p>
         <p>
-          Günümüzde apiterapi ürünleri, ham ve işlenmemiş hallerindeki potansiyel riskleri en aza indirmek için <strong>modern analiz ve ekstraksiyon</strong> teknikleriyle tüketime hazır hale getirilmektedir. Eylül Arıcılık olarak yürüttüğümüz laboratuvar faaliyetlerinin temel amacı budur.
+          Eylül Arıcılık'ta yürütülen laboratuvar faaliyetleri; hammaddeyi tanımlama, hijyen uygulamaları, parti takibi ve kontrollü üretim adımları hakkında şeffaf bilgi sunmaya odaklanır. Bu içerikler tıbbi tavsiye değildir.
         </p>
       </div>
       <div class="editorial-side scroll-fade">
@@ -144,7 +156,7 @@ const apiterapiFaq = faqList.filter(f => f.category === "apiterapi");
         </div>
         <h3>Kalite ve Saflık Analizleri</h3>
         <p>
-          Laboratuvarımızda paketlenen balların HMF (Hidroksimetilfurfural), prolin amino asidi miktarı, nem oranı ve diyastaz sayısı analiz edilmektedir. Nem oranının ideal seviyede (genellikle %17-19) olması balın mayalanmasını önler. HMF analizleri ise balın hatalı şekilde yüksek ısıl işleme maruz kalmadığını veya sahte şeker şurubu içermediğini kanıtlar.
+          Laboratuvarımızda paketlenen balların HMF (Hidroksimetilfurfural), prolin amino asidi miktarı, nem oranı ve diyastaz sayısı gibi değerleri kalite değerlendirmesi kapsamında takip edilir. Bu kontroller, ürünün işlenme ve saklama koşullarına ilişkin kayıtların değerlendirilmesine yardımcı olur.
         </p>
       </div>
 
@@ -154,7 +166,7 @@ const apiterapiFaq = faqList.filter(f => f.category === "apiterapi");
         </div>
         <h3>Geriye Dönük İzlenebilirlik</h3>
         <p>
-          Tükettiğiniz Eylül Arıcılık ürününün ambalajı üzerinde yer alan parti (lot) numarası, o ürünün hangi arılıktan, hangi tarihte sağım yapıldığını, laboratuvara giriş tarihini, analiz raporunu ve dolumu yapan personelin bilgilerini içerir. Bu sistem sayesinde müşterilerimize %100 şeffaf ve güvenilir bir gıda zinciri sunuyoruz.
+          Eylül Arıcılık ürünlerinde yer alan parti (lot) numarası; hammadde kaynağı, üretim tarihi, laboratuvar kabulü ve paketleme kaydı gibi süreç bilgilerinin geriye dönük izlenmesine yardımcı olur. Bu yaklaşım, ürün bilgisini şeffaflaştırmayı amaçlar.
         </p>
       </div>
     </div>

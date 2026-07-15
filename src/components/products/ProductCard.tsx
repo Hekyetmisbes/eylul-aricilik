@@ -13,7 +13,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onInfoClick, 
   const whatsappLink = `${siteConfig.whatsappUrl}?text=${whatsappMessage}`;
 
   return (
-    <div className="product-card">
+    <article id={product.id} className="product-card">
       <div className="product-image-container">
         {/* Fallback pattern background if image is not loaded */}
         <div className="product-image-placeholder">
@@ -262,7 +262,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onInfoClick, 
           flex-shrink: 0;
         }
       `}</style>
-    </div>
+    </article>
   );
 };
 export default ProductCard;

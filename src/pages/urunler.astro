@@ -3,23 +3,47 @@ import { Image } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SectionHeading from "../components/ui/SectionHeading.astro";
 import ProductFilters from "../components/products/ProductFilters";
+import { products } from "../data/products";
+import { categories } from "../data/categories";
 
 // Local assets
 import productsHeroImg from "../assets/products-hero.png";
+
+const catalogSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Eylül Arıcılık Arı Ürünleri ve Arıcılık Ekipmanları Kataloğu",
+  numberOfItems: products.length,
+  itemListElement: products.map((product, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    item: {
+      "@type": "Product",
+      name: product.name,
+      description: product.shortDescription,
+      category: categories.find((category) => category.id === product.category)?.name,
+      image: new URL(product.image, "https://eylularicilik.com").href,
+      url: `https://eylularicilik.com/urunler#${encodeURIComponent(product.id)}`
+    }
+  }))
+};
+const breadcrumbs = [{ label: "Ürünler", href: "/urunler" }];
 ---
 
 <BaseLayout 
-  title="Ürünler Kataloğu"
-  description="Eylül Arıcılık bal çeşitleri, propolis özütleri, polen, arı sütü, arı ekmeği ve kaliteli arıcılık ekipmanları ürün kataloğu."
+  title="Arı Ürünleri ve Arıcılık Ekipmanları"
+  description="Hanak, Ardahan'da bal, propolis, polen, arı sütü ve arıcılık ekipmanları için Eylül Arıcılık bilgi kataloğunu inceleyin."
+  breadcrumbs={breadcrumbs}
+  structuredData={catalogSchema}
 >
   <!-- Page Header -->
   <section class="products-header-section bg-cream">
     <div class="container header-split-grid">
       <div class="header-text-col">
         <SectionHeading
-          title="Ürün Kataloğu"
+          title="Arı Ürünleri ve Arıcılık Ekipmanları"
           tagline="Doğal ve Güvenilir"
-          description="Ardahan Hanak yaylalarından topladığımız saf arı ürünlerini ve arıcılık ekipmanlarımızı inceleyebilir, bilgi almak için doğrudan bizimle iletişime geçebilirsiniz."
+          description="Hanak, Ardahan kaynaklı arı ürünlerini; kovan, koruyucu kıyafet, süzüm ekipmanı ve ambalaj çözümleriyle birlikte bilgi kataloğumuzda inceleyebilirsiniz."
           align="left"
           level="h1"
         />

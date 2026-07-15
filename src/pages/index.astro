@@ -22,7 +22,7 @@ const featuredProducts = products.filter(p => p.featured).slice(0, 4);
 const generalFaq = faqList.filter(f => f.category === "genel" || f.category === "urunler").slice(0, 4);
 ---
 
-<BaseLayout>
+<BaseLayout description="Eylül Arıcılık; Hanak, Ardahan'da arı ürünleri, arıcılık ekipmanları ve kontrollü apiterapi laboratuvarı süreçleri hakkında güvenilir bilgi sunar.">
   <!-- 1. Hero Section -->
   <section class="hero-section bg-honeycomb">
     <div class="container hero-grid">
@@ -33,7 +33,7 @@ const generalFaq = faqList.filter(f => f.category === "genel" || f.category === 
           <span class="highlight-text">Bilimle Desteklenen</span> Arıcılık
         </h1>
         <p class="lead hero-subtext">
-          Ardahan'ın Hanak yaylalarından elde edilen en saf arı ürünlerini, modern apiterapi laboratuvarımızda analiz edip standardize ederek sağlığınız için hazırlıyoruz.
+          Ardahan'ın Hanak yaylalarından elde edilen arı ürünlerini; kontrollü üretim, izlenebilirlik ve laboratuvar süreçleri odağında tanıtıyoruz.
         </p>
         <div class="hero-actions">
           <Button href="/urunler" variant="primary">Ürünleri İncele</Button>
@@ -166,13 +166,13 @@ const generalFaq = faqList.filter(f => f.category === "genel" || f.category === 
       </div>
       <div class="lab-content-block scroll-fade">
         <Badge variant="success">Apiterapi Laboratuvarı</Badge>
-        <h2 class="editorial-serif">Sağlığınız İçin Hijyen ve Standardizasyon</h2>
+        <h2 class="editorial-serif">Apiterapi Ürünlerinde Hijyen ve Standardizasyon</h2>
         <p>
           Arıların kovanlarını korumak ve koloniyi temiz tutmak için salgıladığı propolis gibi güçlü bileşenler, rastgele toplanıp doğrudan kullanılamaz. 
           Eylül Arıcılık bünyesindeki modern laboratuvarımızda, propolis özütleme süreçlerini <strong>alkolsüz, su bazlı ve etken maddesi standardize</strong> olacak şekilde yürütüyoruz.
         </p>
         <p>
-          Tüm analiz ve özütleme süreçlerimiz hijyen standartlarına uygun, kimyasal koruyucu içermeyen yöntemlerle gerçekleştirilir. Amacımız doğanın şifasını en güvenilir haliyle sunmaktır.
+          Tüm analiz ve özütleme süreçlerimiz, ürün bilgisini şeffaflaştırmak ve süreç takibini güçlendirmek amacıyla hijyen kurallarına uygun biçimde yürütülür.
         </p>
         <div class="lab-actions">
           <Button href="/apiterapi" variant="primary">Süreçlerimizi İnceleyin</Button>
@@ -296,7 +296,7 @@ const generalFaq = faqList.filter(f => f.category === "genel" || f.category === 
       <SectionHeading 
         title="Sıkça Sorulan Sorular" 
         tagline="Bilgi Köşesi" 
-        description="Eylül Arıcılık, üretimlerimiz ve sipariş süreçleri hakkında en çok merak edilen konular."
+        description="Eylül Arıcılık, arı ürünleri, arıcılık ekipmanları ve kontrollü üretim süreçleri hakkında en çok merak edilen konular."
       />
       <div class="faq-accordion-block scroll-fade">
         <Accordion items={generalFaq} client:load />
@@ -308,7 +308,7 @@ const generalFaq = faqList.filter(f => f.category === "genel" || f.category === 
   <section class="contact-cta-section bg-honeycomb">
     <div class="container cta-container scroll-fade">
       <div class="cta-inner-card">
-        <h2 class="editorial-serif">Detaylı Bilgi Almak veya Sipariş Vermek İster misiniz?</h2>
+        <h2 class="editorial-serif">Arı Ürünleri ve Arıcılık Ekipmanları Hakkında Bilgi Alın</h2>
         <p>
           Web sitemizdeki tüm arı ürünleri ve arıcılık ekipmanları hakkında teknik bilgi edinmek, stok durumlarını sormak veya doğrudan Özgür Topal ile iletişime geçmek için hemen bize ulaşabilirsiniz.
         </p>

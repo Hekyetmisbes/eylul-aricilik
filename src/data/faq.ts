@@ -8,8 +8,8 @@ export interface FaqItem {
 export const faqList: FaqItem[] = [
   {
     id: "g1",
-    question: "Eylül Arıcılık ürünlerini nasıl satın alabilirim?",
-    answer: "Web sitemiz bir e-ticaret sitesi değildir; ürünlerimizi tanıtan bilgilendirici bir katalogdur. Ürünlerimiz, stok durumları ve sipariş detayları hakkında bilgi almak için ürün kartlarındaki veya iletişim sayfamızdaki WhatsApp butonu ya da telefon numaramız (0538 862 56 31) üzerinden doğrudan bizimle iletişime geçebilirsiniz.",
+    question: "Eylül Arıcılık ürünleri hakkında nasıl bilgi alabilirim?",
+    answer: "Web sitemiz e-ticaret sitesi değildir; arı ürünleri ve arıcılık ekipmanlarını tanıtan bilgilendirici bir katalogdur. Ürün grupları, kullanım ve saklama bilgileri için ürün kartlarındaki WhatsApp bağlantısından ya da 0538 862 56 31 numaralı telefondan bize ulaşabilirsiniz.",
     category: "genel"
   },
   {
@@ -27,7 +27,7 @@ export const faqList: FaqItem[] = [
   {
     id: "a1",
     question: "Apiterapi nedir ve hangi ürünleri kapsar?",
-    answer: "Apiterapi, bal, polen, propolis, arı sütü, arı ekmeği (perga), balmumu ve arı zehri gibi kovan ürünlerinin sağlık ve zindeliği desteklemek amacıyla geleneksel olarak kullanılması yöntemidir. Bu uygulamalar tedavi amaçlı tıbbi müdahalelerin yerine geçmez, sadece destekleyici ve besleyici amaçlıdır.",
+    answer: "Apiterapi; bal, polen, propolis, arı sütü, arı ekmeği (perga), balmumu ve arı zehri gibi kovan ürünlerinin geleneksel kullanımı ile kontrollü hazırlanışını ele alan bilgilendirme alanıdır. Bu içerikler tıbbi tavsiye değildir ve profesyonel sağlık hizmetinin yerine geçmez.",
     category: "apiterapi"
   },
   {
@@ -39,7 +39,19 @@ export const faqList: FaqItem[] = [
   {
     id: "a3",
     question: "Arı ürünleri tüketiminde alerji riski nedir?",
-    answer: "Arı zehri, polen ve propolis başta olmak üzere tüm arı ürünleri, bazı bireylerde şiddetli alerjik reaksiyonlara (anafilaksi dahil) yol açabilir. Özellikle astım, saman nezlesi veya arı sokmasına karşı duyarlılığı olan kişilerin bu ürünleri tüketmeden veya cildine uygulamadan önce mutlaka nitelikli bir sağlık uzmanına (hekim) danışması gerekmektedir. 1 yaşından küçük çocuklara kesinlikle bal ve arı ürünleri verilmemelidir.",
+    answer: "Arı zehri, polen ve propolis başta olmak üzere arı ürünleri bazı bireylerde ciddi alerjik reaksiyonlara yol açabilir. Arı sokmasına, polene veya arı ürünlerine duyarlılığı olan kişilerin kullanımdan önce nitelikli bir sağlık uzmanına danışması gerekir. 1 yaşından küçük çocuklara bal verilmemelidir.",
     category: "apiterapi"
+  },
+  {
+    id: "a4",
+    question: "Apiterapi laboratuvarında hangi kontroller yapılır?",
+    answer: "Hammadde kabulü, fiziksel hazırlık, analiz ve kontrol, kontrollü üretim, paketleme ve parti numarasıyla kayıt altına alma; Eylül Arıcılık'ın apiterapi laboratuvarı süreçlerinin temel adımlarıdır. Kontroller ürün bilgisini ve izlenebilirliği desteklemek için yürütülür.",
+    category: "apiterapi"
+  },
+  {
+    id: "u1",
+    question: "Arıcılık ekipmanları arasında neler bulunur?",
+    answer: "Eylül Arıcılık kataloğunda kovan ve çıtalar, arıcı körüğü, bal süzgeci, koruyucu tulum ve eldiven, temel petek, arı besleme ürünleri ile cam kavanoz ve ambalaj seçenekleri yer alır. Ürünlerin teknik özellikleri için kataloğu inceleyebilir veya doğrudan bilgi alabilirsiniz.",
+    category: "urunler"
   }
 ];

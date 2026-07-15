@@ -49,11 +49,11 @@ export const safetyWarnings = {
   sections: [
     {
       title: "Tıbbi Tavsiye Değildir",
-      content: "Bu web sitesindeki hiçbir bilgi tıbbi tavsiye, teşhis veya tedavi önerisi niteliği taşımaz. Arı ürünleri ve apiterapi geleneksel olarak vücut direncini destekleyici gıda takviyeleridir ve profesyonel tıbbi bakımın yerini alamaz."
+      content: "Bu web sitesindeki hiçbir bilgi tıbbi tavsiye, teşhis veya tedavi önerisi niteliği taşımaz. Apiterapi ve arı ürünleriyle ilgili içerikler bilgilendirme amaçlıdır; profesyonel tıbbi bakımın yerine geçmez."
     },
     {
       title: "Şiddetli Alerji Riski",
-      content: "Arı zehri, polen, propolis ve diğer arı salgıları alerjik kişilerde anafilaktik şok gibi hayati tehlike arz eden alerjik reaksiyonlara neden olabilir. Herhangi bir ürünü kullanmadan önce mutlaka alerji testi yaptırınız veya hekiminize danışınız."
+      content: "Arı zehri, polen, propolis ve diğer arı ürünleri alerjik kişilerde ciddi reaksiyonlara neden olabilir. Arı ürünlerine veya arı sokmasına karşı duyarlılığı bulunan kişilerin kullanımdan önce nitelikli bir sağlık uzmanına danışması gerekir."
     },
     {
       title: "Çocuk ve Bebek Tüketimi",
@@ -84,9 +84,9 @@ export const substancesList: SubstanceInfo[] = [
     id: "propolis",
     name: "Propolis",
     latinName: "Propolis",
-    description: "Arıların ağaçların tomurcuk ve gövdelerinden topladığı, kovanın sterilizasyonunu sağlayan reçinemsi ve güçlü antioksidan özellikli arı salgısıdır.",
-    labProcess: "Laboratuvarımızda alkol, glikol veya ağır solventler kullanılmadan, patentli sulu ekstraksiyon yöntemiyle sıvı forma dönüştürülür. Su bazlı propolisimiz çocuklar ve hassas kullanıcılar için uygundur.",
-    attributes: ["Alkolsüz Su Ekstraksiyonu", "Yüksek Polifenol Oranı", "Gıda Standartlarına Uygun Saflık"]
+    description: "Arıların bitki tomurcukları ve gövdelerinden topladığı reçinemsi yapıda bir arı ürünüdür.",
+    labProcess: "Laboratuvarımızda alkol, glikol veya ağır solventler kullanılmadan su bazlı ekstraksiyon yöntemiyle sıvı forma dönüştürülür. Kullanım öncesinde ürün etiketi ve alerji uyarıları dikkate alınmalıdır.",
+    attributes: ["Alkolsüz Su Ekstraksiyonu", "Fenolik Bileşen Takibi", "Kontrollü Üretim Süreci"]
   },
   {
     id: "polen",
@@ -100,17 +100,17 @@ export const substancesList: SubstanceInfo[] = [
     id: "ari-sutu",
     name: "Arı Sütü",
     latinName: "Royal Jelly",
-    description: "Genç işçi arıların salgı bezlerinden ürettiği, kraliçe arının yaşam boyu tek besin kaynağı olan ve kraliçeye uzun ömür kazandıran kremsi yapıda bir süper gıdadır.",
+    description: "Genç işçi arıların salgı bezlerinden üretilen, kremsi yapıda bir kovan ürünüdür; kraliçe arının beslenmesinde kullanılır.",
     labProcess: "Kovanlardan çok küçük miktarlarda mikro-kaşıklarla hasat edilir, 10-HDA (10-hidroksi-2-dekenoik asit) ve royalaktin protein değeri ölçüldükten sonra soğuk zincir bozulmadan özel muhafazalı kaplarda saklanır.",
-    attributes: ["10-HDA Standartlaşması", "Dondurularak Korunan Saflık", "Hücresel Yenilenme Desteği"]
+    attributes: ["10-HDA Değeri Takibi", "Soğuk Zincirle Saklama", "Kontrollü Hasat"]
   },
   {
     id: "ari-ekmegi",
     name: "Arı Ekmeği (Perga)",
     latinName: "Perga",
-    description: "Polenin arının kendi enzimleri ve balla karışarak petek gözlerinde 3 hafta boyunca doğal fermantasyona uğramasıyla oluşan biyoyararlanımı yüksek arı gıdasıdır.",
-    labProcess: "Petek gözlerinden tek tek el işçiliğiyle toplanır. Fermantasyon süreci polenin sert dış kabuğunu erittiği için insan sindirim sistemi tarafından polene göre 3-4 kat daha hızlı ve yüksek oranda emilir.",
-    attributes: ["Doğal Fermente Probiyotik", "Kolay Sindirim ve Yüksek Emilim", "Zenginleştirilmiş Enzimler"]
+    description: "Polenin arı enzimleri ve balla petek gözlerinde doğal olarak fermente olmasıyla oluşan kovan ürünüdür.",
+    labProcess: "Petek gözlerinden kontrollü biçimde toplanır ve ürünün saklama koşulları kayıt altına alınır. Tüketim tercihleri kişisel hassasiyetler dikkate alınarak değerlendirilmelidir.",
+    attributes: ["Doğal Fermantasyon", "Kontrollü Toplama", "Saklama Bilgisi"]
   },
   {
     id: "ari-zehri",
@@ -126,7 +126,6 @@ export const substancesList: SubstanceInfo[] = [
     latinName: "Cera Alba",
     description: "Genç işçi arıların mum bezlerinden salgıladığı, kovan peteklerini oluşturmak için kullandıkları doğal, organik yapışkan mumdur.",
     labProcess: "Laboratuvarda süzülen ballardan geriye kalan temiz peteklerin eritilip yabancı tortulardan süzülmesiyle elde edilir. Hiçbir parafin veya kimyasal mum içermeyen saf kalıplar halinde cilt bakım merhemleri hammaddesi olarak ayrılır.",
-    attributes: ["%100 Organik Parafinsiz Mum", "Cilt Koruyucu Bariyer Etkisi", "Saf Doğal Kozmetik Tabanı"]
+    attributes: ["Parafin İçermeyen Balmumu", "Kozmetik Hammaddesi", "Saflaştırma Süreci"]
   }
 ];
-

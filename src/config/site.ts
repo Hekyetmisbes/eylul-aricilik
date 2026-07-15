@@ -1,4 +1,5 @@
 export const siteConfig = {
+  url: "https://eylularicilik.com",
   name: "Eylül Arıcılık",
   owner: "Özgür Topal",
   phone: "0538 862 56 31",
@@ -11,7 +12,9 @@ export const siteConfig = {
   whatsappUrl: "https://wa.me/905388625631",
   workingHours: "Her gün: 08:00 - 20:00",
   tagline: "Doğadan Gelen Şifa, Bilimle Desteklenen Arıcılık",
-  description: "Eylül Arıcılık - Hanak, Ardahan'da doğal arı ürünleri üretimi, beekeeping ekipmanları tedariği ve modern, hijyenik apiterapi laboratuvarı ile hizmetinizdeyiz.",
+  description: "Eylül Arıcılık; Hanak, Ardahan'da arı ürünleri, arıcılık ekipmanları ve kontrollü üretim süreçleri hakkında bilgi sunan yerel arıcılık işletmesidir.",
+  logoUrl: "/eylul_aricilik_logo_white_background.png",
+  ogImageUrl: "/assets/og-image.jpg",
   navigation: [
     { label: "Ana Sayfa", href: "/" },
     { label: "Ürünler", href: "/urunler" },

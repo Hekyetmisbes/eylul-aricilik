@@ -8,11 +8,13 @@ import { siteConfig } from "../config/site";
 
 // Local assets
 import storeInteriorImg from "../assets/store-interior.png";
+const breadcrumbs = [{ label: "İletişim", href: "/iletisim" }];
 ---
 
 <BaseLayout
-  title="İletişim"
-  description="Eylül Arıcılık telefon numarası, e-posta adresi, Hanak mağaza ve laboratuvar adresi, çalışma saatleri ve bilgi talep formu."
+  title="Hanak Arıcılık Mağazası ve İletişim"
+  description="Eylül Arıcılık Hanak, Ardahan iletişim bilgileri: telefon, WhatsApp, e-posta, adres, çalışma saatleri ve arı ürünleri bilgi talep formu."
+  breadcrumbs={breadcrumbs}
 >
   <!-- 1. Header Section -->
   <section class="contact-header bg-cream">

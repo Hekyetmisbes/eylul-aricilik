@@ -9,11 +9,13 @@ import { siteConfig } from "../config/site";
 // Local assets
 import storeInteriorImg from "../assets/store-interior.png";
 import ozgurTopalImg from "../assets/ozgur-topal.png";
+const breadcrumbs = [{ label: "Hakkımızda", href: "/hakkimizda" }];
 ---
 
 <BaseLayout
-  title="Hakkımızda"
-  description="Eylül Arıcılık kurucusu Özgür Topal, işletmemizin tarihçesi, misyonumuz, vizyonumuz, değerlerimiz ve Hanak'taki arıcılık hikayemiz."
+  title="Hanak'ta Arıcılık Hikâyemiz"
+  description="Eylül Arıcılık kurucusu Özgür Topal, Hanak ve Ardahan'daki arıcılık deneyimimiz, kontrollü üretim yaklaşımımız ve değerlerimiz hakkında bilgi edinin."
+  breadcrumbs={breadcrumbs}
 >
   <!-- 1. Page Hero -->
   <section class="about-hero bg-cream">
