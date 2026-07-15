@@ -1,0 +1,103 @@
+---
+interface Props {
+  href?: string;
+  variant?: "primary" | "secondary" | "dark";
+  className?: string;
+  type?: "button" | "submit" | "reset";
+  id?: string;
+  [key: string]: any;
+}
+
+const {
+  href,
+  variant = "primary",
+  className = "",
+  type = "button",
+  id,
+  ...rest
+} = Astro.props;
+
+const elementClass = `btn btn-${variant} ${className}`;
+---
+
+{
+  href ? (
+    <a href={href} class={elementClass} id={id} {...rest}>
+      <slot />
+    </a>
+  ) : (
+    <button type={type} class={elementClass} id={id} {...rest}>
+      <slot />
+    </button>
+  )
+}
+
+<style>
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Inter", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: var(--space-3) var(--space-5);
+    min-height: 44px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  .btn:active {
+    transform: translateY(1px);
+  }
+
+  .btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  /* Variant Styles */
+  .btn-primary {
+    background-color: var(--color-honey-500);
+    color: var(--color-black-soft);
+    box-shadow: 0 4px 12px rgba(245, 197, 66, 0.2);
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-honey-600);
+    box-shadow: 0 6px 16px rgba(245, 197, 66, 0.3);
+    transform: translateY(-1px);
+  }
+
+  .btn-secondary {
+    background-color: transparent;
+    color: var(--color-brown-700);
+    border: 1.5px solid var(--color-brown-500);
+  }
+
+  .btn-secondary:hover {
+    background-color: rgba(139, 94, 52, 0.05);
+    border-color: var(--color-brown-700);
+    color: var(--color-brown-900);
+    transform: translateY(-1px);
+  }
+
+  .btn-dark {
+    background-color: var(--color-charcoal);
+    color: var(--color-white);
+    box-shadow: 0 4px 12px rgba(43, 43, 43, 0.15);
+  }
+
+  .btn-dark:hover {
+    background-color: var(--color-black-soft);
+    box-shadow: 0 6px 16px rgba(27, 27, 27, 0.25);
+    transform: translateY(-1px);
+  }
+</style>

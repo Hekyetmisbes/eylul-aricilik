@@ -1,0 +1,11 @@
+GEMINI.md
+AGENTS.md
+
+node_modules/
+dist/
+.astro/
+
+instagram_icerik_plani.md
+seo_analiz_raporu.md
+
+public/ChatGPT Image*.png

@@ -1,0 +1,965 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SectionHeading from "../components/ui/SectionHeading.astro";
+import Button from "../components/ui/Button.astro";
+import Badge from "../components/ui/Badge.astro";
+import Accordion from "../components/ui/Accordion";
+import { siteConfig } from "../config/site";
+import { categories } from "../data/categories";
+import { products } from "../data/products";
+import { faqList } from "../data/faq";
+
+// Filter only featured products (first 4 items)
+const featuredProducts = products.filter(p => p.featured).slice(0, 4);
+
+// General FAQ list for home page
+const generalFaq = faqList.filter(f => f.category === "genel" || f.category === "urunler").slice(0, 4);
+---
+
+<BaseLayout>
+  <!-- 1. Hero Section -->
+  <section class="hero-section bg-honeycomb">
+    <div class="container hero-grid">
+      <div class="hero-content-block scroll-fade animate-in">
+        <Badge variant="primary" className="hero-badge">Doğal ve Bilimsel Çözümler</Badge>
+        <h1 class="hero-headline editorial-serif">
+          Doğadan Gelen Şifa, <br />
+          <span class="highlight-text">Bilimle Desteklenen</span> Arıcılık
+        </h1>
+        <p class="lead hero-subtext">
+          Ardahan'ın Hanak yaylalarından elde edilen en saf arı ürünlerini, modern apiterapi laboratuvarımızda analiz edip standardize ederek sağlığınız için hazırlıyoruz.
+        </p>
+        <div class="hero-actions">
+          <Button href="/urunler" variant="primary">Ürünleri İncele</Button>
+          <Button href="/apiterapi" variant="secondary">Apiterapiyi Keşfet</Button>
+        </div>
+      </div>
+      <div class="hero-image-block scroll-fade animate-in">
+        <div class="hero-image-frame-container">
+          <img src="/home-hero.png" alt="Hanak Eylül Arıcılık Doğal Ürünleri" class="hero-brand-img" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Trust Badges Section -->
+  <section class="trust-badges-section">
+    <div class="container">
+      <div class="badges-grid">
+        <div class="badge-card scroll-fade">
+          <div class="badge-icon-circle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3>%100 Doğal</h3>
+          <p>Hanak yaylalarında hiçbir yapay besleme veya kimyasal katkı olmadan üretilir.</p>
+        </div>
+
+        <div class="badge-card scroll-fade">
+          <div class="badge-icon-circle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          </div>
+          <h3>Kontrollü Üretim</h3>
+          <p>Kovandan şişelemeye kadar tüm süreçler kayıt altında ve denetime tabidir.</p>
+        </div>
+
+        <div class="badge-card scroll-fade">
+          <div class="badge-icon-circle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          </div>
+          <h3>Hijyenik Laboratuvar</h3>
+          <p>Propolis ve özel formüllerimiz modern laboratuvar cihazlarıyla steril ortamda ekstrakte edilir.</p>
+        </div>
+
+        <div class="badge-card scroll-fade">
+          <div class="badge-icon-circle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          </div>
+          <h3>Yerel Deneyim</h3>
+          <p>Yılların pratik arıcılık birikimini akademik ve bilimsel ilkelerle birleştiriyoruz.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Product Categories Section -->
+  <section class="categories-section bg-cream">
+    <div class="container">
+      <SectionHeading 
+        title="Arı Ürünleri Kataloğu" 
+        tagline="Kategoriler" 
+        description="Doğal bal çeşitlerinden profesyonel arıcılık ekipmanlarına kadar aradığınız tüm ürünler."
+      />
+      <div class="categories-grid">
+        {categories.slice(0, 6).map((cat) => (
+          <a href={`/urunler?category=${cat.slug}`} class="category-card scroll-fade">
+            <div class="category-card-icon-wrapper">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-honey-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                <path d="M2 17l10 5 10-5"></path>
+                <path d="M2 12l10 5 10-5"></path>
+              </svg>
+            </div>
+            <h3 class="category-card-title">{cat.name}</h3>
+            <p class="category-card-desc">{cat.description}</p>
+            <span class="category-card-link">Kataloğu İncele &rarr;</span>
+          </a>
+        ))}
+      </div>
+      <div class="center-cta-block">
+        <Button href="/urunler" variant="dark">Tüm Kategorileri Gör</Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Featured Products Section -->
+  <section class="featured-products-section">
+    <div class="container">
+      <SectionHeading 
+        title="Öne Çıkan Ürünlerimiz" 
+        tagline="Analiz Edilmiş & Saf" 
+        description="Laboratuvar kontrolünden geçmiş, saflığı tescillenmiş en popüler arı ürünlerimiz."
+      />
+      <div class="featured-grid">
+        {featuredProducts.map((prod) => {
+          const catName = categories.find(c => c.id === prod.category)?.name || "Diğer";
+          const waMessage = encodeURIComponent(`Merhaba, ${prod.name} hakkında bilgi almak istiyorum.`);
+          const waLink = `${siteConfig.whatsappUrl}?text=${waMessage}`;
+          return (
+            <div class="featured-product-card scroll-fade">
+              <div class="feat-card-image-wrapper">
+                <span class="feat-card-badge">{catName}</span>
+                <div class="feat-card-image-placeholder">
+                  <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50 15L80 32.5V67.5L50 85L20 67.5V32.5L50 15Z" stroke="var(--color-honey-500)" stroke-width="4"/>
+                  </svg>
+                </div>
+                <img src={prod.image} alt={prod.imageAlt} class="feat-card-image" onerror="this.style.display='none'" />
+              </div>
+              <div class="feat-card-content">
+                <h3>{prod.name}</h3>
+                <p>{prod.shortDescription}</p>
+                <div class="feat-card-actions">
+                  <Button href={`/urunler?search=true`} variant="secondary" className="feat-btn">Detayları Gör</Button>
+                  <Button href={waLink} variant="primary" className="feat-btn wa-bg" target="_blank" rel="noopener">WhatsApp</Button>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Apitherapy Laboratory Intro -->
+  <section class="lab-intro-section bg-honeycomb">
+    <div class="container lab-grid">
+      <div class="lab-image-block scroll-fade">
+        <div class="lab-image-wrapper-home">
+          <img src="/apiterapi-hero.png" alt="Eylül Arıcılık Apiterapi Laboratuvarı" class="lab-home-img" />
+        </div>
+      </div>
+      <div class="lab-content-block scroll-fade">
+        <Badge variant="success">Apiterapi Laboratuvarı</Badge>
+        <h2 class="editorial-serif">Sağlığınız İçin Hijyen ve Standardizasyon</h2>
+        <p>
+          Arıların kovanlarını korumak ve koloniyi temiz tutmak için salgıladığı propolis gibi güçlü bileşenler, rastgele toplanıp doğrudan kullanılamaz. 
+          Eylül Arıcılık bünyesindeki modern laboratuvarımızda, propolis özütleme süreçlerini <strong>alkolsüz, su bazlı ve etken maddesi standardize</strong> olacak şekilde yürütüyoruz.
+        </p>
+        <p>
+          Tüm analiz ve özütleme süreçlerimiz hijyen standartlarına uygun, kimyasal koruyucu içermeyen yöntemlerle gerçekleştirilir. Amacımız doğanın şifasını en güvenilir haliyle sunmaktır.
+        </p>
+        <div class="lab-actions">
+          <Button href="/apiterapi" variant="primary">Süreçlerimizi İnceleyin</Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Brand Story Preview -->
+  <section class="brand-story-preview bg-cream">
+    <div class="container story-grid">
+      <div class="story-content scroll-fade">
+        <Badge variant="secondary">Hikayemiz</Badge>
+        <h2 class="editorial-serif">Hanak'tan Gelen Güven</h2>
+        <p>
+          Eylül Arıcılık'ın temelleri, kurucumuz <strong>Özgür Topal</strong>'ın doğaya duyduğu derin sevgi ve yerel arıcılık birikimiyle Ardahan Hanak'ta atıldı. 
+          Karasal iklimin ve yüksek rakımın getirdiği zorlukları, Hanak florasının zenginliğiyle harmanlayarak arılarımızın en temiz koşullarda yaşamasını ve üretmesini sağlıyoruz.
+        </p>
+        <p>
+          Yıllar içinde geliştirdiğimiz laboratuvar altyapımızla, geleneksel arıcılığı çağdaş gıda ve apiterapi standartlarıyla buluşturduk. Gelişim hikayemizi ve değerlerimizi gururla sürdürüyoruz.
+        </p>
+        <div class="story-actions">
+          <Button href="/hakkimizda" variant="secondary">Hakkımızda Detaylı Bilgi</Button>
+        </div>
+      </div>
+      <div class="story-visual scroll-fade">
+        <div class="story-image-wrapper-home">
+          <img src="/store-interior.png" alt="Eylül Arıcılık Hanak Mağazası" class="story-home-img" />
+          <div class="story-box-overlay">
+            <div class="story-quote">
+              <span class="quote-mark">&ldquo;</span>
+              <blockquote class="editorial-serif">
+                Arıcılık bizim için sadece bir meslek değil; doğanın mükemmel döngüsüne duyduğumuz saygının ve onu bilimle koruma gayretimizin bir yansımasıdır.
+              </blockquote>
+              <cite>&mdash; Özgür Topal, Kurucu</cite>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Quality and Process Preview -->
+  <section class="quality-preview-section">
+    <div class="container">
+      <SectionHeading 
+        title="Kontrollü Üretim Aşamaları" 
+        tagline="Kalite Politikamız" 
+        description="Kovandan sofranıza kadar geçen her adımda sıkı hijyen ve kontrol standartları uyguluyoruz."
+      />
+      <div class="process-steps-preview-grid">
+        <div class="step-preview-card scroll-fade">
+          <span class="step-num">01</span>
+          <h4>Kovan Kontrolü</h4>
+          <p>Arılarımızın sağlığı ve kovan temizliği, pestisit ve kimyasal kullanılmadan düzenli denetlenir.</p>
+        </div>
+        <div class="step-preview-card scroll-fade">
+          <span class="step-num">02</span>
+          <h4>Analiz ve Ayrıştırma</h4>
+          <p>Toplanan balların nem oranları ve propolisin etken bileşen değerleri laboratuvarda ölçülür.</p>
+        </div>
+        <div class="step-preview-card scroll-fade">
+          <span class="step-num">03</span>
+          <h4>Soğuk Süzüm & Ekstraksiyon</h4>
+          <p>Ballar ısıl işlem görmeden soğuk süzülür, propolis ise özel alkolsüz su formülüyle çözündürülür.</p>
+        </div>
+        <div class="step-preview-card scroll-fade">
+          <span class="step-num">04</span>
+          <h4>Steril Şişeleme</h4>
+          <p>Emniyet kilitli, gıdaya uygun damlalıklı cam şişelerde el değmeden paketlenip etiketlenir.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Testimonials Section -->
+  <section class="testimonials-section bg-cream">
+    <div class="container">
+      <SectionHeading 
+        title="Bize Güvenenlerin Görüşleri" 
+        tagline="Memnuniyet" 
+        description="Ürünlerimizi deneyimleyen yerel tüketicilerimizin ve laboratuvar ziyaretçilerimizin geri bildirimleri."
+      />
+      <div class="testimonials-grid">
+        <div class="testimonial-card scroll-fade">
+          <p class="testimonial-text">
+            &ldquo;Hanak Karakovan Balı'nı yıllardır alıyorum. Aroması ve peteğinin tamamen eriyen doğal yapısı mükemmel. Özgür Bey'in laboratuvarını gördükten sonra propolis özütünü de güvenle ailem için kullanmaya başladım.&rdquo;
+          </p>
+          <div class="testimonial-author">
+            <strong>Merve K.</strong>
+            <span>Eğitimci, Ardahan</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card scroll-fade">
+          <p class="testimonial-text">
+            &ldquo;Arıcılık ekipmanları ve tulumlarında Eylül Arıcılık'tan alışveriş yaptım. Gabardin tulum son derece dayanıklı çıktı, maske teli görüşü engellemiyor. Yerel esnaf olarak gösterdikleri ilgi için teşekkür ederim.&rdquo;
+          </p>
+          <div class="testimonial-author">
+            <strong>Kadir Y.</strong>
+            <span>Arıcı, Göle</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card scroll-fade">
+          <p class="testimonial-text">
+            &ldquo;Özellikle su bazlı propolis damlasını kış aylarında çocuklarım için kullanıyorum. Alkol içermemesi ve laboratuvarda kontrollü şartlarda üretilmesi benim için en büyük güven kaynağı.&rdquo;
+          </p>
+          <div class="testimonial-author">
+            <strong>Dr. Elif A.</strong>
+            <span>Eczacı, Kars</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Common Questions Section -->
+  <section class="faq-section">
+    <div class="container">
+      <SectionHeading 
+        title="Sıkça Sorulan Sorular" 
+        tagline="Bilgi Köşesi" 
+        description="Eylül Arıcılık, üretimlerimiz ve sipariş süreçleri hakkında en çok merak edilen konular."
+      />
+      <div class="faq-accordion-block scroll-fade">
+        <Accordion items={generalFaq} client:load />
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. Contact CTA Section -->
+  <section class="contact-cta-section bg-honeycomb">
+    <div class="container cta-container scroll-fade">
+      <div class="cta-inner-card">
+        <h2 class="editorial-serif">Detaylı Bilgi Almak veya Sipariş Vermek İster misiniz?</h2>
+        <p>
+          Web sitemizdeki tüm arı ürünleri ve arıcılık ekipmanları hakkında teknik bilgi edinmek, stok durumlarını sormak veya doğrudan Özgür Topal ile iletişime geçmek için hemen bize ulaşabilirsiniz.
+        </p>
+        <div class="cta-buttons">
+          <Button href={siteConfig.whatsappUrl} variant="primary" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="btn-icon">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+            </svg>
+            WhatsApp'tan Sorun
+          </Button>
+          <Button href="/iletisim" variant="dark">İletişim Formunu Doldurun</Button>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Hero Section styles */
+  .hero-section {
+    padding-top: var(--space-8);
+    padding-bottom: var(--space-8);
+    display: flex;
+    align-items: center;
+    min-height: calc(80vh - 80px);
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-6);
+    align-items: center;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-grid {
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+      gap: var(--space-8);
+    }
+  }
+
+  .hero-content-block,
+  .hero-image-block {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .hero-badge {
+    margin-bottom: var(--space-3);
+  }
+
+  .hero-headline {
+    color: var(--color-brown-900);
+    margin-bottom: var(--space-4);
+    font-size: var(--font-size-3xl);
+  }
+
+  .highlight-text {
+    color: var(--color-honey-700);
+    position: relative;
+    display: inline-block;
+  }
+
+  .hero-subtext {
+    margin-bottom: var(--space-5);
+    color: var(--color-gray-700);
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+  }
+
+  .hero-image-frame-container {
+    position: relative;
+    width: 100%;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(46, 27, 16, 0.1);
+    border: 1px solid rgba(92, 58, 33, 0.12);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    background-color: var(--color-white);
+  }
+
+  .hero-image-frame-container:hover {
+    transform: scale(1.02);
+  }
+
+  .hero-brand-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 16/10;
+  }
+
+  /* Trust Badges */
+  .trust-badges-section {
+    background-color: var(--color-white);
+    border-top: 1px solid rgba(92, 58, 33, 0.05);
+    border-bottom: 1px solid rgba(92, 58, 33, 0.05);
+    padding-block: var(--space-6);
+  }
+
+  .badges-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+
+  @media (min-width: 640px) {
+    .badges-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .badges-grid {
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-4);
+    }
+  }
+
+  .badge-card {
+    text-align: center;
+    padding: var(--space-4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .badge-icon-circle {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background-color: rgba(245, 197, 66, 0.12);
+    color: var(--color-honey-700);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-2);
+  }
+
+  .badge-card h3 {
+    font-size: 1.1rem;
+    color: var(--color-brown-900);
+    margin-bottom: 0;
+    font-weight: 700;
+  }
+
+  .badge-card p {
+    font-size: 0.85rem;
+    color: var(--color-gray-500);
+    margin-bottom: 0;
+    line-height: 1.5;
+  }
+
+  /* Categories Grid */
+  .categories-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  @media (min-width: 640px) {
+    .categories-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .categories-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-5);
+    }
+  }
+
+  .category-card {
+    background-color: var(--color-white);
+    border: 1px solid rgba(92, 58, 33, 0.08);
+    border-radius: var(--radius-md);
+    padding: var(--space-5);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    box-shadow: var(--shadow-card);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .category-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-card-hover);
+    border-color: rgba(245, 197, 66, 0.2);
+  }
+
+  .category-card-icon-wrapper {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    background-color: var(--color-cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .category-card-title {
+    font-size: 1.15rem;
+    color: var(--color-brown-900);
+    margin-bottom: 0;
+  }
+
+  .category-card-desc {
+    font-size: 0.875rem;
+    color: var(--color-gray-500);
+    line-height: 1.5;
+    margin-bottom: 0;
+    flex-grow: 1;
+  }
+
+  .category-card-link {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-honey-700);
+  }
+
+  .category-card:hover .category-card-link {
+    color: var(--color-honey-600);
+  }
+
+  .center-cta-block {
+    text-align: center;
+    margin-top: var(--space-6);
+  }
+
+  /* Featured products layout */
+  .featured-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+
+  @media (min-width: 640px) {
+    .featured-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .featured-grid {
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-4);
+    }
+  }
+
+  .featured-product-card {
+    background-color: var(--color-white);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(92, 58, 33, 0.08);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: all 0.3s ease;
+    container-type: inline-size;
+  }
+
+  .featured-product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card-hover);
+    border-color: rgba(245, 197, 66, 0.2);
+  }
+
+  .feat-card-image-wrapper {
+    position: relative;
+    height: 180px;
+    background-color: var(--color-cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .feat-card-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(46, 27, 16, 0.85);
+    color: var(--color-white);
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: var(--radius-pill);
+    z-index: 3;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .feat-card-image-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-cream) 0%, rgba(245, 197, 66, 0.08) 100%);
+  }
+
+  .feat-card-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 2;
+  }
+
+  .feat-card-content {
+    padding: var(--space-4);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 8px;
+  }
+
+  .feat-card-content h3 {
+    font-size: 1rem;
+    margin-bottom: 0;
+    color: var(--color-brown-900);
+  }
+
+  .feat-card-content p {
+    font-size: 0.8rem;
+    color: var(--color-gray-500);
+    line-height: 1.4;
+    margin-bottom: 0;
+    flex-grow: 1;
+  }
+
+  .feat-card-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-top: var(--space-3);
+  }
+
+  @container (min-width: 280px) {
+    .feat-card-actions {
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+  }
+
+  :global(.feat-btn) {
+    min-height: 36px !important;
+    padding: 6px 12px !important;
+    font-size: 0.775rem !important;
+    border-radius: 6px !important;
+  }
+
+  :global(.wa-bg) {
+    background-color: #25d366 !important;
+    color: var(--color-white) !important;
+    border-color: #25d366 !important;
+  }
+
+  :global(.wa-bg:hover) {
+    background-color: #20ba5a !important;
+    border-color: #20ba5a !important;
+  }
+
+  /* Laboratory Section Grid */
+  .lab-grid, .story-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    align-items: center;
+  }
+
+  @media (min-width: 768px) {
+    .lab-grid {
+      grid-template-columns: 1fr 1.2fr;
+    }
+    .story-grid {
+      grid-template-columns: 1.2fr 0.8fr;
+    }
+  }
+
+  .lab-image-block, .story-visual {
+    display: flex;
+    justify-content: center;
+  }
+
+  .lab-image-wrapper-home {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-card-hover);
+    border: 1px solid rgba(92, 58, 33, 0.12);
+  }
+
+  .lab-home-img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+
+  .lab-image-wrapper-home:hover .lab-home-img {
+    transform: scale(1.02);
+  }
+
+  .story-image-wrapper-home {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-card-hover);
+    border: 1px solid rgba(92, 58, 33, 0.1);
+  }
+
+  .story-home-img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+  }
+
+  .story-box-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(46, 27, 16, 0.95) 0%, rgba(46, 27, 16, 0.4) 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: var(--space-4);
+  }
+
+  .story-box-overlay .story-quote blockquote {
+    color: var(--color-white);
+    font-size: 0.95rem;
+    line-height: 1.45;
+  }
+
+  .story-box-overlay .story-quote cite {
+    color: var(--color-honey-500);
+    font-size: 0.75rem;
+  }
+
+  .story-quote {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .quote-mark {
+    font-size: 3.5rem;
+    color: var(--color-honey-500);
+    line-height: 1;
+    height: 30px;
+    font-family: Georgia, serif;
+  }
+
+  .story-quote blockquote {
+    font-size: 1.05rem;
+    color: var(--color-brown-700);
+    line-height: 1.5;
+    font-style: italic;
+  }
+
+  .story-quote cite {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-brown-900);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-top: var(--space-2);
+  }
+
+  /* Process preview */
+  .process-steps-preview-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+
+  @media (min-width: 640px) {
+    .process-steps-preview-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .process-steps-preview-grid {
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-4);
+    }
+  }
+
+  .step-preview-card {
+    background-color: var(--color-white);
+    border: 1px solid rgba(92, 58, 33, 0.08);
+    border-radius: var(--radius-md);
+    padding: var(--space-5);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: var(--shadow-card);
+  }
+
+  .step-num {
+    font-size: var(--font-size-2xl);
+    font-weight: 800;
+    color: rgba(245, 197, 66, 0.4);
+    line-height: 1;
+    margin-bottom: var(--space-2);
+    font-family: "Manrope", sans-serif;
+  }
+
+  .step-preview-card h4 {
+    font-size: 1.05rem;
+    margin-bottom: var(--space-2);
+    color: var(--color-brown-900);
+  }
+
+  .step-preview-card p {
+    font-size: 0.85rem;
+    color: var(--color-gray-500);
+    margin-bottom: 0;
+    line-height: 1.5;
+  }
+
+  /* Testimonials Grid */
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+
+  @media (min-width: 768px) {
+    .testimonials-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .testimonial-card {
+    background-color: var(--color-white);
+    border: 1px solid rgba(92, 58, 33, 0.08);
+    border-radius: var(--radius-md);
+    padding: var(--space-5);
+    box-shadow: var(--shadow-card);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .testimonial-text {
+    font-size: 0.9rem;
+    color: var(--color-gray-700);
+    line-height: 1.6;
+    font-style: italic;
+    margin-bottom: var(--space-4);
+  }
+
+  .testimonial-author {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .testimonial-author strong {
+    font-size: 0.9rem;
+    color: var(--color-brown-900);
+  }
+
+  .testimonial-author span {
+    font-size: 0.75rem;
+    color: var(--color-gray-500);
+  }
+
+  /* FAQ Accordion block */
+  .faq-accordion-block {
+    max-width: 800px;
+    margin-inline: auto;
+  }
+
+  /* Contact CTA */
+  .contact-cta-section {
+    padding-block: var(--space-7);
+  }
+
+  .cta-container {
+    max-width: 1000px;
+  }
+
+  .cta-inner-card {
+    background: rgba(46, 27, 16, 0.75);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(245, 197, 66, 0.3);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5) var(--space-5);
+    text-align: center;
+    box-shadow: 0 12px 42px rgba(46, 27, 16, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-3);
+  }
+
+  @media (min-width: 768px) {
+    .cta-inner-card {
+      padding: var(--space-6) var(--space-7);
+      gap: var(--space-4);
+    }
+  }
+
+  .cta-inner-card h2 {
+    color: var(--color-white);
+    margin-bottom: 0;
+    max-width: 600px;
+  }
+
+  .cta-inner-card p {
+    color: var(--color-gray-300);
+    font-size: var(--font-size-lg);
+    line-height: 1.6;
+    margin-bottom: 0;
+    max-width: 700px;
+  }
+
+  .cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    justify-content: center;
+    margin-top: var(--space-2);
+    width: 100%;
+  }
+
+  .cta-buttons :global(.btn) {
+    width: 100%;
+  }
+
+  @media (min-width: 640px) {
+    .cta-buttons :global(.btn) {
+      width: auto;
+    }
+  }
+
+  .btn-icon {
+    flex-shrink: 0;
+    margin-right: 6px;
+  }
+</style>

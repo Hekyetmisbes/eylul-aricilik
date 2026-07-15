@@ -1,0 +1,283 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SectionHeading from "../components/ui/SectionHeading.astro";
+import Button from "../components/ui/Button.astro";
+import ContactForm from "../components/forms/ContactForm";
+import { siteConfig } from "../config/site";
+---
+
+<BaseLayout
+  title="İletişim"
+  description="Eylül Arıcılık telefon numarası, e-posta adresi, Hanak mağaza ve laboratuvar adresi, çalışma saatleri ve bilgi talep formu."
+>
+  <!-- 1. Header Section -->
+  <section class="contact-header bg-cream">
+    <div class="container">
+      <SectionHeading
+        title="Bize Ulaşın"
+        tagline="İletişim Kanalları"
+        description="Ürünlerimiz, laboratuvarımız ve arıcılık faaliyetlerimizle ilgili tüm sorularınız için bizimle iletişime geçebilirsiniz."
+      />
+    </div>
+  </section>
+
+  <!-- 2. Contact Main Workspace -->
+  <section class="contact-workspace-section">
+    <div class="container contact-grid">
+      <!-- Left: Contact Information Cards -->
+      <div class="contact-info-block scroll-fade animate-in">
+        <h2 class="editorial-serif">İletişim Bilgileri</h2>
+        <p class="contact-intro-text">
+          Sorularınızı iletmek veya arı ürünlerimiz hakkında detaylı bilgi edinmek için aşağıdaki kanalları kullanabilir ya da doğrudan yerel mağazamızı ziyaret edebilirsiniz.
+        </p>
+
+        <div class="info-cards-list">
+          <!-- Card 1: Phone -->
+          <div class="info-card">
+            <div class="info-card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            </div>
+            <div class="info-card-details">
+              <h4>Telefon</h4>
+              <p><a href={`tel:${siteConfig.phone.replace(/\s+/g, '')}`}>{siteConfig.phoneFormatted}</a></p>
+              <span class="info-card-sub">Özgür Topal - Arıcılık Uzmanı</span>
+            </div>
+          </div>
+
+          <!-- Card 2: Email -->
+          <div class="info-card">
+            <div class="info-card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </div>
+            <div class="info-card-details">
+              <h4>E-posta</h4>
+              <p><a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a></p>
+              <span class="info-card-sub">Resmi bilgi ve laboratuvar yazışmaları</span>
+            </div>
+          </div>
+
+          <!-- Card 3: Address -->
+          <div class="info-card">
+            <div class="info-card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <div class="info-card-details">
+              <h4>Adresimiz</h4>
+              <p><a href={siteConfig.mapsUrl} target="_blank" rel="noopener noreferrer">{siteConfig.address}</a></p>
+              <span class="info-card-sub">Hanak / Ardahan</span>
+            </div>
+          </div>
+
+          <!-- Card 4: Working Hours -->
+          <div class="info-card">
+            <div class="info-card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </div>
+            <div class="info-card-details">
+              <h4>Çalışma Saatleri</h4>
+              <p>{siteConfig.workingHours}</p>
+              <span class="info-card-sub">Resmi tatiller dahil mağaza çalışma saatleri</span>
+            </div>
+          </div>
+        </div>
+
+        {/* WhatsApp Call to Action Button */}
+        <div class="whatsapp-cta-block">
+          <Button href={siteConfig.whatsappUrl} variant="primary" target="_blank" rel="noopener" className="wa-full-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="btn-icon">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+            </svg>
+            WhatsApp'tan Sorun
+          </Button>
+        </div>
+
+        <div class="contact-store-image-wrapper">
+          <img src="/store-interior.png" alt="Eylül Arıcılık Hanak Mağazası" class="contact-store-img" />
+        </div>
+      </div>
+
+      <!-- Right: React Contact Form -->
+      <div class="contact-form-block scroll-fade animate-in">
+        <h2 class="editorial-serif">Bilgi Talep Formu</h2>
+        <p class="contact-intro-text">
+          Formu eksiksiz doldurarak laboratuvar analizlerimiz veya ürün gruplarımız hakkında bilgi talep edebilirsiniz.
+        </p>
+        <ContactForm client:load />
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Embedded Map Section -->
+  <section class="map-section bg-cream">
+    <div class="container">
+      <SectionHeading
+        title="Haritada Yerimiz"
+        tagline="Konum & Yol Tarifi"
+        description="Selamverdi Mahallesi, Atatürk Caddesi üzerindeki mağazamıza haritadan yol tarifi alarak kolayca ulaşabilirsiniz."
+      />
+      <div class="map-wrapper scroll-fade">
+        {/* Lazy loaded responsive map iframe */}
+        <iframe 
+          title="Eylül Arıcılık Hanak Mağaza Harita Konumu"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1498.441221764356!2d42.8467136!3d41.2345679!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40429cb2fe166789%3A0xde1b0296d1e48b3f!2sEyl%C3%BCl%20Ar%C4%B1c%C4%B1l%C4%B1k!5e0!3m2!1str!2str!4v1783965561000!5m2!1str!2str" 
+          width="100%" 
+          height="450" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade"
+          class="map-iframe"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .contact-header {
+    padding-top: var(--space-6);
+    padding-bottom: var(--space-4);
+    border-bottom: 1px solid rgba(92, 58, 33, 0.05);
+  }
+
+  .contact-workspace-section {
+    padding-block: var(--space-7);
+    background-color: var(--color-white);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  @media (min-width: 1024px) {
+    .contact-grid {
+      grid-template-columns: 1fr 1.2fr;
+      gap: var(--space-8);
+    }
+  }
+
+  .contact-intro-text {
+    font-size: 0.95rem;
+    color: var(--color-gray-700);
+    line-height: 1.6;
+    margin-bottom: var(--space-5);
+  }
+
+  /* Info Cards */
+  .info-cards-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    margin-bottom: var(--space-5);
+  }
+
+  .info-card {
+    display: flex;
+    gap: var(--space-4);
+    padding: var(--space-4);
+    background-color: var(--color-off-white);
+    border: 1px solid var(--color-gray-100);
+    border-radius: var(--radius-md);
+    transition: border-color 0.2s;
+  }
+
+  .info-card:hover {
+    border-color: var(--color-honey-500);
+  }
+
+  .info-card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: var(--color-white);
+    color: var(--color-honey-700);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(46, 27, 16, 0.04);
+    flex-shrink: 0;
+  }
+
+  .info-card-details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .info-card-details h4 {
+    font-size: 1rem;
+    color: var(--color-brown-900);
+    margin-bottom: 0;
+  }
+
+  .info-card-details p {
+    font-size: 0.95rem;
+    color: var(--color-charcoal);
+    font-weight: 600;
+    margin-bottom: 0;
+    line-height: 1.4;
+  }
+
+  .info-card-details a:hover {
+    color: var(--color-honey-700);
+    text-decoration: underline;
+  }
+
+  .info-card-sub {
+    font-size: 0.75rem;
+    color: var(--color-gray-500);
+  }
+
+  .whatsapp-cta-block {
+    width: 100%;
+  }
+
+  .contact-store-image-wrapper {
+    margin-top: var(--space-4);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    border: 1px solid rgba(92, 58, 33, 0.1);
+  }
+
+  .contact-store-img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    display: block;
+  }
+
+  .wa-full-btn {
+    width: 100%;
+    background-color: #25d366 !important;
+    color: var(--color-white) !important;
+    border-color: #25d366 !important;
+  }
+
+  .wa-full-btn:hover {
+    background-color: #20ba5a !important;
+    border-color: #20ba5a !important;
+    box-shadow: 0 6px 16px rgba(37, 211, 102, 0.25) !important;
+  }
+
+  .btn-icon {
+    flex-shrink: 0;
+    margin-right: 8px;
+  }
+
+  /* Map */
+  .map-wrapper {
+    border: 2px solid rgba(92, 58, 33, 0.1);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    background-color: var(--color-white);
+  }
+
+  .map-iframe {
+    display: block;
+  }
+</style>

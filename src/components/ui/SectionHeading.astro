@@ -1,0 +1,86 @@
+---
+interface Props {
+  title: string;
+  tagline?: string;
+  description?: string;
+  align?: "center" | "left";
+  className?: string;
+  dark?: boolean;
+}
+
+const {
+  title,
+  tagline,
+  description,
+  align = "center",
+  className = "",
+  dark = false
+} = Astro.props;
+---
+
+<div class={`section-heading align-${align} ${dark ? "heading-dark" : ""} ${className}`}>
+  {tagline && <span class="heading-tagline">{tagline}</span>}
+  <h2 class="heading-title">{title}</h2>
+  {description && <p class="heading-description">{description}</p>}
+</div>
+
+<style>
+  .section-heading {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: var(--space-6);
+    max-width: 720px;
+  }
+
+  .align-center {
+    align-items: center;
+    text-align: center;
+    margin-inline: auto;
+  }
+
+  .align-left {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .heading-tagline {
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    color: var(--color-brown-500);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: var(--space-2);
+    display: inline-block;
+  }
+
+  .heading-title {
+    color: var(--color-brown-900);
+    margin-bottom: var(--space-3);
+  }
+
+  .heading-description {
+    color: var(--color-gray-700);
+    font-size: var(--font-size-lg);
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+
+  /* Dark Theme Adjustments */
+  .heading-dark .heading-tagline {
+    color: var(--color-honey-500);
+  }
+
+  .heading-dark .heading-title {
+    color: var(--color-white);
+  }
+
+  .heading-dark .heading-description {
+    color: var(--color-gray-300);
+  }
+
+  @media (min-width: 768px) {
+    .section-heading {
+      margin-bottom: var(--space-7);
+    }
+  }
+</style>

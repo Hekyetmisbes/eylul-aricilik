@@ -1,0 +1,478 @@
+---
+import { siteConfig } from "../../config/site";
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <!-- Brand column -->
+    <div class="footer-col brand-col">
+      <a href="/" class="footer-logo-link" aria-label="Eylül Arıcılık Ana Sayfa">
+        <img src="/logo-white.png" alt="Eylül Arıcılık Logo" class="brand-logo footer-logo" />
+      </a>
+      <p class="brand-description">
+        Hanak'ın zengin yayla florasından gelen şifayı, modern laboratuvar ortamımızda bilimsel ve kontrollü yöntemlerle sizlere sunuyoruz.
+      </p>
+      <div class="social-links">
+        <a href={siteConfig.socials.instagram} aria-label="Instagram Profilimiz" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        </a>
+        <a href={siteConfig.socials.linkedin} aria-label="LinkedIn Profilimiz" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-col">
+      <h3 class="footer-heading">Hızlı Menü</h3>
+      <ul class="footer-links">
+        {siteConfig.navigation.map((item) => (
+          <li>
+            <a href={item.href}>{item.label}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+
+    <!-- Contact Info -->
+    <div class="footer-col contact-col">
+      <h3 class="footer-heading">İletişim Bilgileri</h3>
+      <ul class="footer-contact-list">
+        <li class="contact-item">
+          <span class="owner-name">{siteConfig.owner}</span>
+        </li>
+        <li>
+          <a href={`tel:${siteConfig.phone.replace(/\s+/g, '')}`} class="contact-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="contact-icon"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            {siteConfig.phoneFormatted}
+          </a>
+        </li>
+        <li>
+          <a href={`mailto:${siteConfig.email}`} class="contact-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="contact-icon"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            {siteConfig.email}
+          </a>
+        </li>
+        <li class="contact-address">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="contact-icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          <a href={siteConfig.mapsUrl} target="_blank" rel="noopener noreferrer" class="address-link">
+            {siteConfig.address}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Bottom Bar with Legal Links -->
+  <div class="footer-bottom">
+    <div class="container bottom-container">
+      <p class="copyright">&copy; {currentYear} {siteConfig.name}. Tüm Hakları Saklıdır.</p>
+      <div class="legal-links">
+        <button type="button" class="legal-btn" data-dialog="privacy-dialog">Gizlilik Politikası</button>
+        <button type="button" class="legal-btn" data-dialog="kvkk-dialog">KVKK Aydınlatma Metni</button>
+        <button type="button" class="legal-btn" data-dialog="cerez-dialog">Çerez Politikası</button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Legal Dialog Modals (Lightweight native <dialog> tags for accessibility) -->
+<dialog id="privacy-dialog" class="legal-dialog">
+  <div class="dialog-content">
+    <div class="dialog-header">
+      <h2>Gizlilik Politikası</h2>
+      <button type="button" class="close-dialog-btn" aria-label="Kapat">&times;</button>
+    </div>
+    <div class="dialog-body">
+      <p><strong>Son Güncelleme:</strong> 14 Temmuz 2026</p>
+      <p>Eylül Arıcılık olarak, web sitemizi ziyaret eden kullanıcılarımızın gizliliğini korumak önceliğimizdir. Bu gizlilik politikası, web sitemiz aracılığıyla elde edilen verilerin nasıl kullanıldığını açıklar.</p>
+      <h3>1. Toplanan Veriler</h3>
+      <p>Sitemizde yer alan iletişim formu doldurulduğunda girilen isim, e-posta adresi, telefon numarası ve mesaj içeriği toplanmaktadır. Bu veriler sadece sizinle iletişim kurmak ve bilgi taleplerinizi yanıtlamak amacıyla kullanılır.</p>
+      <h3>2. Veri Güvenliği</h3>
+      <p>Toplanan kişisel verileriniz güvenli sunucularda saklanmakta ve yetkisiz erişimlerin önlenmesi için gerekli fiziksel ve teknik tedbirler alınmaktadır. Bilgileriniz üçüncü şahıslarla asla ticari amaçlarla paylaşılmaz.</p>
+    </div>
+  </div>
+</dialog>
+
+<dialog id="kvkk-dialog" class="legal-dialog">
+  <div class="dialog-content">
+    <div class="dialog-header">
+      <h2>KVKK Aydınlatma Metni</h2>
+      <button type="button" class="close-dialog-btn" aria-label="Kapat">&times;</button>
+    </div>
+    <div class="dialog-body">
+      <p><strong>Veri Sorumlusu:</strong> Özgür Topal (Eylül Arıcılık)</p>
+      <p>6698 sayılı Kişisel Verilerin Korunması Kanunu (“KVKK”) uyarınca kişisel verileriniz, Eylül Arıcılık tarafından aşağıda açıklanan kapsamda işlenebilecektir.</p>
+      <h3>1. Kişisel Verilerin İşlenme Amacı</h3>
+      <p>Formlarda doldurmuş olduğunuz isim, telefon ve e-posta verileriniz, bilgi edinme taleplerinizin karşılanması, arıcılık ürünleri tanıtım katalog isteklerinin yürütülmesi ve iletişim süreçlerinin takibi amacıyla işlenmektedir.</p>
+      <h3>2. Kişisel Veri Toplamanın Yöntemi ve Hukuki Sebebi</h3>
+      <p>Kişisel verileriniz, web sitemizdeki iletişim formunun elektronik olarak doldurulması yöntemiyle, Kanun'un 5. maddesinde belirtilen "ilgili kişinin açık rızası" ve "veri sorumlusunun meşru menfaatleri" hukuki sebeplerine dayalı olarak toplanmaktadır.</p>
+      <h3>3. İlgili Kişinin Hakları</h3>
+      <p>Kanun'un 11. maddesi uyarınca eylularicilik@gmail.com adresine yazılı başvuruda bulunarak kişisel verilerinizin silinmesini, güncellenmesini veya işlenip işlenmediğini öğrenmeyi talep etme hakkınız bulunmaktadır.</p>
+    </div>
+  </div>
+</dialog>
+
+<dialog id="cerez-dialog" class="legal-dialog">
+  <div class="dialog-content">
+    <div class="dialog-header">
+      <h2>Çerez Politikası</h2>
+      <button type="button" class="close-dialog-btn" aria-label="Kapat">&times;</button>
+    </div>
+    <div class="dialog-body">
+      <p>Eylül Arıcılık olarak web sitemizin düzgün çalışması, kullanıcı deneyiminin iyileştirilmesi ve temel analizlerin yapılabilmesi amacıyla çerezleri (cookies) kullanmaktayız.</p>
+      <h3>1. Çerez Nedir?</h3>
+      <p>Çerezler, ziyaret ettiğiniz internet siteleri tarafından tarayıcınız aracılığıyla cihazınıza kaydedilen küçük metin dosyalarıdır.</p>
+      <h3>2. Kullanılan Çerez Türleri</h3>
+      <ul>
+        <li><strong>Zorunlu Çerezler:</strong> Sitenin düzgün çalışması ve güvenlik ayarlarının korunması için zorunludur.</li>
+        <li><strong>Performans ve Analiz Çerezleri:</strong> Sitenin nasıl kullanıldığını analiz ederek performansı artırmamıza yardımcı olur (örneğin ziyaretçi sayısı).</li>
+      </ul>
+      <h3>3. Çerezleri Nasıl Kontrol Edebilirsiniz?</h3>
+      <p>Tarayıcınızın ayarlarını değiştirerek çerezleri reddedebilir veya engelleyebilirsiniz. Ancak zorunlu çerezlerin kapatılması durumunda sitemizin bazı fonksiyonları düzgün çalışmayabilir.</p>
+    </div>
+  </div>
+</dialog>
+
+<script>
+  // Open and close legal dialogs
+  const buttons = document.querySelectorAll("[data-dialog]");
+  
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const dialogId = btn.getAttribute("data-dialog");
+      if (dialogId) {
+        const dialog = document.getElementById(dialogId) as HTMLDialogElement | null;
+        if (dialog) {
+          dialog.showModal();
+          document.body.style.overflow = "hidden"; // Trap body scroll
+        }
+      }
+    });
+  });
+
+  const dialogs = document.querySelectorAll("dialog");
+  dialogs.forEach(dialog => {
+    // Close button event
+    const closeBtn = dialog.querySelector(".close-dialog-btn");
+    closeBtn?.addEventListener("click", () => {
+      dialog.close();
+      document.body.style.overflow = "";
+    });
+
+    // Close when clicking outside of dialog content container
+    dialog.addEventListener("click", (e) => {
+      const rect = dialog.getBoundingClientRect();
+      const isInDialog = (rect.top <= e.clientY && e.clientY <= rect.top + rect.height &&
+        rect.left <= e.clientX && e.clientX <= rect.left + rect.width);
+      if (!isInDialog) {
+        dialog.close();
+        document.body.style.overflow = "";
+      }
+    });
+  });
+</script>
+
+<style>
+  .site-footer {
+    background-color: var(--color-brown-900);
+    color: var(--color-off-white);
+    padding-top: var(--space-6);
+    border-top: 1px solid rgba(245, 197, 66, 0.15);
+    margin-top: auto;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    padding-bottom: var(--space-6);
+  }
+
+  @media (min-width: 768px) {
+    .footer-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .footer-grid {
+      grid-template-columns: 2.2fr 1.3fr 2.5fr;
+      gap: var(--space-7);
+    }
+  }
+
+  .footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  /* Brand Column */
+  .brand-col {
+    max-width: 320px;
+  }
+
+  .footer-logo-link {
+    display: inline-block;
+  }
+
+  .brand-logo {
+    height: 48px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+  }
+
+  .footer-logo {
+    height: 52px;
+  }
+
+  .brand-title {
+    font-size: 1.15rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    font-family: "Manrope", sans-serif;
+  }
+
+  .brand-subtitle {
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: var(--color-honey-500);
+  }
+
+  .brand-description {
+    font-size: 0.9rem;
+    color: var(--color-gray-300);
+    line-height: 1.6;
+  }
+
+  .social-links {
+    display: flex;
+    gap: var(--space-3);
+    margin-top: var(--space-2);
+  }
+
+  .social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: var(--radius-pill);
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--color-gray-300);
+  }
+
+  .social-links a:hover {
+    background-color: var(--color-honey-500);
+    color: var(--color-black-soft);
+    transform: translateY(-2px);
+  }
+
+  /* Headings & Links */
+  .footer-heading {
+    font-size: var(--font-size-md);
+    color: var(--color-white);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: var(--space-3);
+  }
+
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .footer-links a {
+    font-size: 0.925rem;
+    color: var(--color-gray-300);
+  }
+
+  .footer-links a:hover {
+    color: var(--color-honey-500);
+    padding-left: 4px;
+  }
+
+  .highlight-link {
+    color: var(--color-honey-500) !important;
+    font-weight: 600;
+  }
+
+  /* Contact Info */
+  .footer-contact-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .contact-item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .owner-name {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--color-white);
+  }
+
+  .owner-title {
+    font-size: 0.75rem;
+    color: var(--color-honey-500);
+  }
+
+  .contact-link, .contact-address {
+    font-size: 0.925rem;
+    color: var(--color-gray-300);
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+
+  .contact-link:hover, .address-link:hover {
+    color: var(--color-honey-500);
+  }
+
+  .contact-icon {
+    color: var(--color-honey-500);
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+
+  /* Bottom Bar */
+  .footer-bottom {
+    background-color: var(--color-black-soft);
+    padding-block: var(--space-4);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .bottom-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-3);
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    .bottom-container {
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: left;
+    }
+  }
+
+  .copyright {
+    font-size: 0.85rem;
+    color: var(--color-gray-500);
+    margin-bottom: 0;
+  }
+
+  .legal-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    justify-content: center;
+  }
+
+  .legal-btn {
+    font-size: 0.85rem;
+    color: var(--color-gray-500);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .legal-btn:hover {
+    color: var(--color-honey-500);
+    text-decoration: underline;
+  }
+
+  /* Legal dialog styling */
+  .legal-dialog {
+    border: none;
+    border-radius: var(--radius-md);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    width: 90%;
+    margin: auto;
+    background-color: var(--color-white);
+  }
+
+  .legal-dialog::backdrop {
+    background-color: rgba(46, 27, 16, 0.6);
+    backdrop-filter: blur(4px);
+  }
+
+  .dialog-content {
+    padding: var(--space-5);
+  }
+
+  .dialog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--color-gray-300);
+    padding-bottom: var(--space-3);
+    margin-bottom: var(--space-4);
+  }
+
+  .dialog-header h2 {
+    margin-bottom: 0;
+    color: var(--color-brown-900);
+  }
+
+  .close-dialog-btn {
+    font-size: 2rem;
+    line-height: 1;
+    background: none;
+    border: none;
+    color: var(--color-gray-500);
+    cursor: pointer;
+    padding: 0 var(--space-2);
+  }
+
+  .close-dialog-btn:hover {
+    color: var(--color-error);
+  }
+
+  .dialog-body {
+    max-height: 60vh;
+    overflow-y: auto;
+    font-size: 0.95rem;
+    color: var(--color-gray-700);
+    line-height: 1.6;
+  }
+
+  .dialog-body h3 {
+    font-size: 1.1rem;
+    margin-top: var(--space-4);
+    margin-bottom: var(--space-2);
+    color: var(--color-brown-700);
+  }
+
+  .dialog-body p {
+    margin-bottom: var(--space-3);
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+  }
+
+  .dialog-body ul {
+    margin-left: var(--space-4);
+    margin-bottom: var(--space-3);
+  }
+
+  .dialog-body li {
+    margin-bottom: var(--space-1);
+  }
+</style>

@@ -1,0 +1,713 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SectionHeading from "../components/ui/SectionHeading.astro";
+import Button from "../components/ui/Button.astro";
+import Accordion from "../components/ui/Accordion";
+import { siteConfig } from "../config/site";
+import { faqList } from "../data/faq";
+import { labSteps, safetyWarnings, substancesList } from "../data/apiterapi";
+
+// Filter apitherapy related FAQs
+const apiterapiFaq = faqList.filter(f => f.category === "apiterapi");
+---
+
+<BaseLayout
+  title="Apiterapi Laboratuvarı"
+  description="Eylül Arıcılık apiterapi süreçleri, laboratuvar kontrol standartları, su bazlı propolis ekstraksiyonu ve önemli sağlık/alerji uyarıları."
+>
+  <!-- 1. Apitherapy Hero -->
+  <section class="apitherapy-hero bg-cream">
+    <div class="container hero-grid">
+      <div class="hero-text-block scroll-fade animate-in">
+        <span class="sec-tag">Bilim ve Doğa Buluşması</span>
+        <h1 class="editorial-serif">Apiterapi Laboratuvarı ve Kontrollü Üretim</h1>
+        <p class="lead">
+          Arıların kovan içi yaşamlarında ürettiği mucizevi salgıları, modern tesisimizde bilimsel kriterlere göre ayrıştırıyor, analiz ediyor ve saflığını bozmadan standardize ediyoruz.
+        </p>
+        <p class="meta-note">
+          *Bu sayfadaki içerikler tamamen bilgilendirme amaçlıdır. Apiterapi ürünleri ilaç değildir ve tıbbi tedavilerin yerine kullanılamaz.
+        </p>
+        <div class="hero-actions">
+          <Button href="#surec" variant="primary">Üretim Süreçlerimiz</Button>
+          <Button href="#alerji-uyarisi" variant="secondary" className="warn-btn-outline">Sağlık Uyarısı</Button>
+        </div>
+      </div>
+      <div class="hero-visual-block scroll-fade animate-in">
+        <div class="apiterapi-hero-image-wrapper">
+          <img src="/apiterapi-hero.png" alt="Eylül Arıcılık Apiterapi Laboratuvarı Araştırmacısı" class="apiterapi-hero-img" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. What is Apitherapy & Lab Context -->
+  <section class="what-is-apitherapy">
+    <div class="container editorial-layout">
+      <div class="editorial-main scroll-fade">
+        <h2 class="editorial-serif">Apiterapi Nedir?</h2>
+        <p>
+          Apiterapi, bal arılarının salgıladığı veya doğadan toplayarak kovanlarında olgunlaştırdığı ürünlerin (bal, polen, propolis, arı sütü, arı ekmeği ve arı zehri) insan vücudunun zindeliğini desteklemek ve direnç kazandırmak amacıyla kullanılması disiplinidir. Geleneksel kullanımı binlerce yıl öncesine dayanmaktadır.
+        </p>
+        <p>
+          Günümüzde apiterapi ürünleri, ham ve işlenmemiş hallerindeki potansiyel riskleri en aza indirmek için <strong>modern analiz ve ekstraksiyon</strong> teknikleriyle tüketime hazır hale getirilmektedir. Eylül Arıcılık olarak yürüttüğümüz laboratuvar faaliyetlerinin temel amacı budur.
+        </p>
+      </div>
+      <div class="editorial-side scroll-fade">
+        <div class="lab-facts-box">
+          <h4>Laboratuvar Prensiplerimiz</h4>
+          <ul class="facts-list">
+            <li>
+              <strong>Sıfır Alkol:</strong> Propolis ekstraksiyonlarımızda çözücü olarak asla alkol veya ağır kimyasal bileşenler kullanılmaz, su bazlı formül tercih edilir.
+            </li>
+            <li>
+              <strong>Maksimum Hijyen:</strong> Üretim, süzüm ve dolum aşamaları HEPA filtre havalandırmalı, paslanmaz çelik ekipmanlı steril kabinlerde yapılır.
+            </li>
+            <li>
+              <strong>Parti Takibi (Lot):</strong> Her süzüm ve özütleme işlemi lot numarasıyla etiketlenerek geriye dönük izlenebilirlik sağlanır.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2.5 Substances Used in Apitherapy Section -->
+  <section class="apitherapy-substances-section">
+    <div class="container">
+      <SectionHeading
+        title="Apiterapide Kullanılan Doğal Maddeler"
+        tagline="Kovan İçi Şifa Kaynakları"
+        description="Laboratuvar ortamımızda işlenen, saflığı analiz edilen ve apiterapi uygulamalarında kullanılan temel arı ürünleri."
+      />
+      
+      <div class="substances-grid">
+        {substancesList.map((sub) => (
+          <div class="substance-card scroll-fade">
+            <div class="substance-header">
+              <h3>{sub.name}</h3>
+              {sub.latinName && <span class="latin-name">({sub.latinName})</span>}
+            </div>
+            <p class="substance-desc">{sub.description}</p>
+            <div class="lab-processing-info">
+              <h5>Laboratuvar Süreci:</h5>
+              <p>{sub.labProcess}</p>
+            </div>
+            <div class="substance-tags">
+              {sub.attributes.map((attr) => (
+                <span class="substance-tag">{attr}</span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Controlled Process Steps -->
+  <section id="surec" class="lab-process-section bg-cream">
+    <div class="container">
+      <SectionHeading
+        title="Laboratuvar Süreçlerimiz"
+        tagline="Aşama Aşama Üretim"
+        description="Kovandan çıkan ham ürünlerin laboratuvarımızda geçirdiği 6 temel üretim ve tescil aşaması."
+      />
+      <div class="process-steps-grid">
+        {labSteps.map((step) => (
+          <div class="process-step-card scroll-fade">
+            <div class="step-card-header">
+              <span class="step-badge">Aşama {step.step}</span>
+              <div class="step-card-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+              </div>
+            </div>
+            <h3>{step.title}</h3>
+            <p>{step.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Quality Control & Traceability Details -->
+  <section class="quality-traceability">
+    <div class="container info-columns">
+      <div class="info-column scroll-fade">
+        <div class="column-icon-header">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-success)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        </div>
+        <h3>Kalite ve Saflık Analizleri</h3>
+        <p>
+          Laboratuvarımızda paketlenen balların HMF (Hidroksimetilfurfural), prolin amino asidi miktarı, nem oranı ve diyastaz sayısı analiz edilmektedir. Nem oranının ideal seviyede (genellikle %17-19) olması balın mayalanmasını önler. HMF analizleri ise balın hatalı şekilde yüksek ısıl işleme maruz kalmadığını veya sahte şeker şurubu içermediğini kanıtlar.
+        </p>
+      </div>
+
+      <div class="info-column scroll-fade">
+        <div class="column-icon-header">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-honey-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        </div>
+        <h3>Geriye Dönük İzlenebilirlik</h3>
+        <p>
+          Tükettiğiniz Eylül Arıcılık ürününün ambalajı üzerinde yer alan parti (lot) numarası, o ürünün hangi arılıktan, hangi tarihte sağım yapıldığını, laboratuvara giriş tarihini, analiz raporunu ve dolumu yapan personelin bilgilerini içerir. Bu sistem sayesinde müşterilerimize %100 şeffaf ve güvenilir bir gıda zinciri sunuyoruz.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Safety and Allergy Warnings (CRITICAL MEDICAL COMPLIANCE) -->
+  <section id="alerji-uyarisi" class="safety-warning-section bg-cream">
+    <div class="container warning-container scroll-fade">
+      <div class="warning-callout-card">
+        <div class="warning-header-wrapper">
+          <div class="warning-pulse-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+              <line x1="12" y1="9" x2="12" y2="13"></line>
+              <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+          </div>
+          <h2>{safetyWarnings.title}</h2>
+        </div>
+        <div class="warning-grid">
+          {safetyWarnings.sections.map((sec) => (
+            <div class="warning-item">
+              <h3>{sec.title}</h3>
+              <p>{sec.content}</p>
+            </div>
+          ))}
+        </div>
+        <div class="warning-footer">
+          <p>
+            Arı ürünleri kullanırken beklenmedik bir etki görüldüğünde kullanımı derhal durdurunuz ve <strong>nitelikli bir sağlık uzmanına (hekiminize) danışınız.</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. FAQ Accordion (Apitherapy Focus) -->
+  <section class="apitherapy-faq">
+    <div class="container">
+      <SectionHeading
+        title="Apiterapi Hakkında Sıkça Sorulanlar"
+        tagline="Sorular & Yanıtlar"
+        description="Laboratuvar uygulamalarımız ve arı ürünleri tüketim kurallarına dair merak ettiğiniz konular."
+      />
+      <div class="faq-accordion-block scroll-fade">
+        <Accordion items={apiterapiFaq} client:load />
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Informational Contact CTA -->
+  <section class="info-cta-section bg-honeycomb">
+    <div class="container cta-container scroll-fade">
+      <div class="cta-inner-card">
+        <h2 class="editorial-serif">Ürün veya Laboratuvar Detayları İçin Bilgi Alın</h2>
+        <p>
+          Propolis üretim süreçlerimiz, analiz standartlarımız veya arı ürünleri hakkında sormak istediğiniz tüm konular için doğrudan bizimle iletişime geçebilirsiniz. Laboratuvarımızda tıbbi muayene veya konsültasyon hizmeti verilmemektedir; sadece laboratuvar ve ürün teknik bilgisi sağlanmaktadır.
+        </p>
+        <div class="cta-buttons">
+          <Button href={siteConfig.whatsappUrl} variant="primary" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="btn-icon">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+            </svg>
+            WhatsApp'tan Bilgi Alın
+          </Button>
+          <Button href="/iletisim" variant="dark">İletişime Geçin</Button>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .apitherapy-hero {
+    padding-top: var(--space-8);
+    padding-bottom: var(--space-8);
+    display: flex;
+    align-items: center;
+    min-height: calc(75vh - 80px);
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-6);
+    align-items: center;
+    width: 100%;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-grid {
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+      gap: var(--space-8);
+    }
+  }
+
+  .hero-text-block,
+  .hero-visual-block {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .sec-tag {
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    color: var(--color-brown-500);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: var(--space-2);
+    display: inline-block;
+  }
+
+  .meta-note {
+    font-size: 0.8rem;
+    color: var(--color-gray-500);
+    font-style: italic;
+    margin-bottom: var(--space-5);
+  }
+
+  .apiterapi-hero-image-wrapper {
+    width: 100%;
+    max-width: 440px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-card-hover);
+    border: 1px solid rgba(92, 58, 33, 0.1);
+  }
+
+  .apiterapi-hero-img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+
+  .apiterapi-hero-image-wrapper:hover .apiterapi-hero-img {
+    transform: scale(1.02);
+  }
+
+  /* Substances Section */
+  .apitherapy-substances-section {
+    padding-block: var(--space-7);
+    background-color: var(--color-white);
+    border-top: 1px solid rgba(92, 58, 33, 0.05);
+  }
+
+  .substances-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+    margin-top: var(--space-6);
+  }
+
+  @media (min-width: 768px) {
+    .substances-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .substances-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .substance-card {
+    background-color: var(--color-off-white);
+    border: 1px solid rgba(92, 58, 33, 0.08);
+    border-radius: var(--radius-md);
+    padding: var(--space-5);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .substance-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card-hover);
+    border-color: rgba(245, 197, 66, 0.3);
+    background-color: var(--color-white);
+  }
+
+  .substance-header {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    border-bottom: 2px solid rgba(245, 197, 66, 0.2);
+    padding-bottom: var(--space-2);
+  }
+
+  .substance-header h3 {
+    font-size: 1.2rem;
+    color: var(--color-brown-900);
+    margin-bottom: 0;
+    font-family: "Manrope", sans-serif;
+    font-weight: 700;
+  }
+
+  .latin-name {
+    font-size: 0.8rem;
+    font-style: italic;
+    color: var(--color-brown-500);
+    font-weight: 600;
+  }
+
+  .substance-desc {
+    font-size: 0.925rem;
+    color: var(--color-gray-700);
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+
+  .lab-processing-info {
+    background-color: rgba(92, 58, 33, 0.03);
+    border-left: 3px solid var(--color-honey-500);
+    padding: var(--space-2) var(--space-3);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    margin-block: var(--space-1);
+  }
+
+  .lab-processing-info h5 {
+    font-size: 0.8rem;
+    color: var(--color-brown-700);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+    font-weight: 700;
+  }
+
+  .lab-processing-info p {
+    font-size: 0.85rem;
+    color: var(--color-gray-700);
+    line-height: 1.5;
+    margin-bottom: 0;
+  }
+
+  .substance-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-top: auto;
+  }
+
+  .substance-tag {
+    font-size: 0.75rem;
+    background-color: var(--color-white);
+    color: var(--color-brown-700);
+    padding: 4px var(--space-2);
+    border-radius: var(--radius-pill);
+    border: 1px solid rgba(92, 58, 33, 0.08);
+    font-weight: 600;
+  }
+
+  .substance-card:hover .substance-tag {
+    background-color: var(--color-cream);
+    border-color: rgba(245, 197, 66, 0.15);
+  }
+
+  /* Editorial Layout */
+  .editorial-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  @media (min-width: 768px) {
+    .editorial-layout {
+      grid-template-columns: 1.2fr 0.8fr;
+    }
+  }
+
+  .lab-facts-box {
+    background-color: var(--color-white);
+    border: 1px solid rgba(92, 58, 33, 0.08);
+    border-radius: var(--radius-md);
+    padding: var(--space-5);
+    box-shadow: var(--shadow-card);
+  }
+
+  .lab-facts-box h4 {
+    font-size: 1.1rem;
+    color: var(--color-brown-900);
+    margin-bottom: var(--space-3);
+  }
+
+  .facts-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .facts-list li {
+    font-size: 0.875rem;
+    color: var(--color-gray-700);
+    line-height: 1.5;
+  }
+
+  /* Lab Process Grid */
+  .process-steps-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+
+  @media (min-width: 640px) {
+    .process-steps-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .process-steps-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .process-step-card {
+    background-color: var(--color-white);
+    border: 1px solid rgba(92, 58, 33, 0.08);
+    border-radius: var(--radius-md);
+    padding: var(--space-5);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    box-shadow: var(--shadow-card);
+  }
+
+  .step-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-2);
+  }
+
+  .step-badge {
+    background-color: rgba(245, 197, 66, 0.15);
+    color: var(--color-honey-700);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: var(--radius-pill);
+    text-transform: uppercase;
+  }
+
+  .step-card-icon {
+    color: var(--color-success);
+  }
+
+  .process-step-card h3 {
+    font-size: 1.15rem;
+    color: var(--color-brown-900);
+    margin-bottom: 0;
+  }
+
+  .process-step-card p {
+    font-size: 0.875rem;
+    color: var(--color-gray-500);
+    margin-bottom: 0;
+    line-height: 1.5;
+  }
+
+  /* Quality Columns */
+  .info-columns {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  @media (min-width: 768px) {
+    .info-columns {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .info-column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .column-icon-header {
+    margin-bottom: var(--space-2);
+  }
+
+  .info-column h3 {
+    font-size: 1.25rem;
+    color: var(--color-brown-900);
+  }
+
+  /* Warning Callout Box */
+  .warning-container {
+    max-width: 960px;
+  }
+
+  .warning-callout-card {
+    background-color: rgba(184, 69, 61, 0.05);
+    border: 2px dashed rgba(184, 69, 61, 0.3);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5);
+    box-shadow: var(--shadow-card);
+  }
+
+  @media (min-width: 768px) {
+    .warning-callout-card {
+      padding: var(--space-6);
+    }
+  }
+
+  .warning-header-wrapper {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-5);
+    color: var(--color-error);
+  }
+
+  .warning-header-wrapper h2 {
+    margin-bottom: 0;
+    color: var(--color-error);
+    font-size: 1.35rem;
+  }
+
+  .warning-pulse-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: rgba(184, 69, 61, 0.1);
+    color: var(--color-error);
+    flex-shrink: 0;
+  }
+
+  .warning-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+    margin-bottom: var(--space-5);
+  }
+
+  @media (min-width: 768px) {
+    .warning-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-5);
+    }
+  }
+
+  .warning-item h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-brown-900);
+    margin-bottom: 6px;
+  }
+
+  .warning-item p {
+    font-size: 0.825rem;
+    color: var(--color-gray-700);
+    line-height: 1.5;
+    margin-bottom: 0;
+  }
+
+  .warning-footer {
+    border-top: 1px solid rgba(184, 69, 61, 0.15);
+    padding-top: var(--space-4);
+    text-align: center;
+  }
+
+  .warning-footer p {
+    font-size: 0.875rem;
+    color: var(--color-charcoal);
+    margin-bottom: 0;
+  }
+
+  .warn-btn-outline {
+    border-color: var(--color-error) !important;
+    color: var(--color-error) !important;
+  }
+
+  .warn-btn-outline:hover {
+    background-color: rgba(184, 69, 61, 0.05) !important;
+    border-color: var(--color-error) !important;
+  }
+
+  /* FAQ block */
+  .faq-accordion-block {
+    max-width: 800px;
+    margin-inline: auto;
+  }
+
+  /* CTA */
+  .cta-container {
+    max-width: 1000px;
+  }
+
+  .cta-inner-card {
+    background: rgba(46, 27, 16, 0.75);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(245, 197, 66, 0.3);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5) var(--space-5);
+    text-align: center;
+    box-shadow: 0 12px 42px rgba(46, 27, 16, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-3);
+  }
+
+  @media (min-width: 768px) {
+    .cta-inner-card {
+      padding: var(--space-6) var(--space-7);
+      gap: var(--space-4);
+    }
+  }
+
+  .cta-inner-card h2 {
+    color: var(--color-white);
+    margin-bottom: 0;
+    max-width: 600px;
+  }
+
+  .cta-inner-card p {
+    color: var(--color-gray-300);
+    font-size: var(--font-size-lg);
+    line-height: 1.6;
+    margin-bottom: 0;
+    max-width: 700px;
+  }
+
+  .cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    justify-content: center;
+    margin-top: var(--space-2);
+    width: 100%;
+  }
+
+  .cta-buttons :global(.btn) {
+    width: 100%;
+  }
+
+  @media (min-width: 640px) {
+    .cta-buttons :global(.btn) {
+      width: auto;
+    }
+  }
+
+  .btn-icon {
+    flex-shrink: 0;
+    margin-right: 6px;
+  }
+</style>

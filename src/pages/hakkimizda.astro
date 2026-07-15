@@ -1,0 +1,564 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SectionHeading from "../components/ui/SectionHeading.astro";
+import Button from "../components/ui/Button.astro";
+import Badge from "../components/ui/Badge.astro";
+import { siteConfig } from "../config/site";
+---
+
+<BaseLayout
+  title="Hakkımızda"
+  description="Eylül Arıcılık kurucusu Özgür Topal, işletmemizin tarihçesi, misyonumuz, vizyonumuz, değerlerimiz ve Hanak'taki arıcılık hikayemiz."
+>
+  <!-- 1. Page Hero -->
+  <section class="about-hero bg-cream">
+    <div class="container hero-grid">
+      <div class="hero-text scroll-fade animate-in">
+        <span class="sec-tag">Biz Kimiz?</span>
+        <h1 class="editorial-serif">Geleneksel Deneyim, Modern Yaklaşım</h1>
+        <p class="lead">
+          Ardahan'ın Hanak ilçesinde başlayan arıcılık serüvenimizi, bilimsel standartlar ve hijyen odaklı bir apiterapi laboratuvarı ile geleceğe taşıyoruz.
+        </p>
+      </div>
+      <div class="hero-visual scroll-fade animate-in">
+        <div class="about-hero-image-wrapper">
+          <img src="/store-interior.png" alt="Eylül Arıcılık Hanak Mağaza İçi" class="about-hero-img" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Brand Story -->
+  <section class="brand-story-section">
+    <div class="container story-layout">
+      <div class="story-main scroll-fade">
+        <h2 class="editorial-serif">Eylül Arıcılık'ın Kuruluş Öyküsü</h2>
+        <p>
+          Eylül Arıcılık, Doğu Anadolu Bölgesi'nin eşsiz doğasında, Kafkas arı ırkının anavatanı olan Ardahan'da kuruldu. Hanak ilçesinin zengin bitki florası, sanayi kirliliğinden uzak coğrafyası ve ortalama 1800 metreyi aşan rakımı, yüksek kaliteli arı ürünleri elde etmek için en ideal koşulları sağlamaktadır.
+        </p>
+        <p>
+          Başlangıçta küçük bir yerel arılık olarak faaliyet gösteren işletmemiz, zamanla arıcılık ekipmanları tedariki ve son aşamada modern apiterapi laboratuvarının kurulmasıyla bölgesel bir marka haline geldi. Geleneksel bilgiyi, modern gıda bilimi ve hijyenik üretim teknikleriyle harmanlayarak yerel ekonomiye katma değer katmayı amaç edindik.
+        </p>
+      </div>
+      <div class="story-aside scroll-fade">
+        <div class="quote-card">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-honey-500)" stroke-width="2" class="quote-icon">
+            <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2H4c-1.25 0-2 .75-2 2v4c0 1.25.75 2 2 2h3c0 4-2 6-4 8zM14 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2h-4c-1.25 0-2 .75-2 2v4c0 1.25.75 2 2 2h3c0 4-2 6-4 8z"></path>
+          </svg>
+          <blockquote class="editorial-serif">
+            Arılarımız Hanak ovalarındaki geven, kekik ve yüzlerce endemik kır çiçeğinden polen toplar. Bizim görevimiz ise bu saf şifayı bozmadan sofranıza taşımaktır.
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Founder Profile Section -->
+  <section class="founder-section bg-cream">
+    <div class="container founder-grid">
+      <div class="founder-visual scroll-fade">
+        <div class="founder-image-wrapper">
+          <img src="/ozgur-topal.png" alt="Özgür Topal - Eylül Arıcılık Kurucusu" class="founder-img" />
+        </div>
+      </div>
+      <div class="founder-info scroll-fade">
+        <Badge variant="primary">Kurucumuz</Badge>
+        <h2>Özgür Topal</h2>
+        <span class="founder-role">Eylül Arıcılık Kurucusu / Arıcılık Uzmanı</span>
+        <p>
+          Özgür Topal, çocukluk yıllarından itibaren aile mesleği olan arıcılıkla iç içe büyümüştür. Ardahan Hanak'ın doğasında edindiği pratik gözlemleri, kovan yönetimi ve arı fizyolojisi konusundaki araştırmalarıyla birleştirerek profesyonel arıcılığa adım atmıştır.
+        </p>
+        <p>
+          Arıcılık ürünlerinin hijyenik işlenmesi ve standardize edilmesi amacıyla kurduğu laboratuvar ile apiterapi alanında bölgenin öncü girişimcilerinden biri olmuştur. Kendi ifadesiyle; <em>&ldquo;Sağlıklı arı, sağlıklı kovan ve kontrollü analiz, kaliteli ürünün üç temel şartıdır.&rdquo;</em>
+        </p>
+        <div class="founder-contact-action">
+          <Button href="/iletisim" variant="dark">İletişime Geçin</Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Mission, Vision and Values -->
+  <section class="mission-vision-section">
+    <div class="container grid-2">
+      <div class="mv-card scroll-fade">
+        <div class="mv-icon-wrapper">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-honey-700)" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+        </div>
+        <h3>Misyonumuz</h3>
+        <p>
+          Kafkas arı ırkının biyolojik zenginliğini koruyarak, Hanak coğrafyasının saf çiçek nektarını en yüksek hijyenik standartlarda arı ürünlerine dönüştürmek; müşterilerimize tescilli, saflığı analiz edilmiş ve güvenilir gıda takviyeleri sunmaktır.
+        </p>
+      </div>
+
+      <div class="mv-card scroll-fade">
+        <div class="mv-icon-wrapper">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-honey-700)" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+        </div>
+        <h3>Vizyonumuz</h3>
+        <p>
+          Apiterapi laboratuvar altyapımızla Türkiye'de kontrollü arıcılık üretimi denildiğinde akla ilk gelen yerel markalardan biri olmak; Ardahan Hanak balı ve propolisinin bilimsel kalitesini ulusal standartlarda kanıtlayıp sürdürülebilir kılmaktır.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Core Values -->
+  <section class="values-section bg-cream">
+    <div class="container">
+      <SectionHeading
+        title="Bizi Biz Yapan Değerlerimiz"
+        tagline="Değerlerimiz"
+        description="Üretimimizden müşteri ilişkilerimize kadar çalışma prensiplerimizi şekillendiren temel ilkeler."
+      />
+      <div class="grid-4">
+        <div class="value-card scroll-fade">
+          <div class="value-num">01</div>
+          <h4>Doğallık ve Saflık</h4>
+          <p>Hiçbir aşamada yapay katkı, koruyucu veya şeker ilavesi yapmadan arının ürettiği saflığı koruruz.</p>
+        </div>
+
+        <div class="value-card scroll-fade">
+          <div class="value-num">02</div>
+          <h4>Bilimsel Denetim</h4>
+          <p>Tüm propolis ekstraksiyon süreçlerimizi laboratuvarda kontrollü ölçüm ve saflık kriterleriyle yönetiriz.</p>
+        </div>
+
+        <div class="value-card scroll-fade">
+          <div class="value-num">03</div>
+          <h4>Şeffaflık ve Güven</h4>
+          <p>Her lot ürünümüzün analiz raporunu, üretim aşamalarını ve menşeini açıkça paylaşarak güven veririz.</p>
+        </div>
+
+        <div class="value-card scroll-fade">
+          <div class="value-num">04</div>
+          <h4>Yerel Sürdürülebilirlik</h4>
+          <p>Hanak'taki yerel arıcılık faaliyetlerini destekleyerek bölgesel kalkınmaya ve biyolojik çeşitliliğe katkı sağlarız.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. History Timeline -->
+  <section class="timeline-section">
+    <div class="container">
+      <SectionHeading
+        title="Eylül Arıcılık Milatları"
+        tagline="Tarihçemiz"
+        description="Kuruluşumuzdan bugüne gelişimimizi özetleyen önemli kilometre taşları."
+      />
+      <div class="timeline-wrapper">
+        <div class="timeline-line"></div>
+        
+        <div class="timeline-item scroll-fade">
+          <div class="timeline-badge-year">2016</div>
+          <div class="timeline-content">
+            <h4>İlk Kovanlar</h4>
+            <p>Hanak yaylalarında kısıtlı sayıda kovanla profesyonel arıcılık faaliyetlerine başladık.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item scroll-fade">
+          <div class="timeline-badge-year">2019</div>
+          <div class="timeline-content">
+            <h4>Ekipman ve Kıyafet Tedariği</h4>
+            <p>Bölgedeki diğer arıcılara destek amacıyla kaliteli arıcılık ekipmanları ve tulum satışını başlattık.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item scroll-fade">
+          <div class="timeline-badge-year">2022</div>
+          <div class="timeline-content">
+            <h4>Laboratuvar Altyapısı</h4>
+            <p>Propolis ekstraksiyonu ve bal analizleri için modern laboratuvar tesisimizi Hanak'ta kurduk.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item scroll-fade">
+          <div class="timeline-badge-year">2026</div>
+          <div class="timeline-content">
+            <h4>İzlenebilir Dijital Katalog</h4>
+            <p>Tüm ürünlerimizi Lot izlenebilirliği standartlarıyla tüketicilere açtığımız bilgilendirme altyapısını tamamladık.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Contact CTA -->
+  <section class="about-cta-section bg-honeycomb">
+    <div class="container cta-container scroll-fade">
+      <div class="cta-inner-card">
+        <h2 class="editorial-serif">Detaylı Bilgi İçin İletişime Geçin</h2>
+        <p>
+          Eylül Arıcılık ve Özgür Topal ile doğrudan görüşmek, laboratuvar standartlarımız hakkında bilgi almak veya yerel mağazamızın konumunu öğrenmek için iletişim kanallarımızı kullanabilirsiniz.
+        </p>
+        <div class="cta-buttons">
+          <Button href={siteConfig.whatsappUrl} variant="primary" target="_blank" rel="noopener">WhatsApp ile İletişim</Button>
+          <Button href="/iletisim" variant="dark">İletişim Sayfası</Button>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .about-hero {
+    padding-top: var(--space-7);
+    padding-bottom: var(--space-7);
+  }
+
+  .sec-tag {
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    color: var(--color-brown-500);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: var(--space-2);
+    display: inline-block;
+  }
+
+  .about-hero-image-wrapper {
+    width: 100%;
+    max-width: 440px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-card-hover);
+    border: 1px solid rgba(92, 58, 33, 0.1);
+  }
+
+  .about-hero-img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+
+  .about-hero-image-wrapper:hover .about-hero-img {
+    transform: scale(1.03);
+  }
+
+  /* Story Layout */
+  .story-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  @media (min-width: 768px) {
+    .story-layout {
+      grid-template-columns: 1.2fr 0.8fr;
+    }
+  }
+
+  .quote-card {
+    background-color: var(--color-off-white);
+    border-left: 4px solid var(--color-honey-500);
+    padding: var(--space-4) var(--space-5);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .quote-icon {
+    opacity: 0.8;
+  }
+
+  .quote-card blockquote {
+    font-size: 1rem;
+    color: var(--color-brown-700);
+    line-height: 1.5;
+    font-style: italic;
+    margin-bottom: 0;
+  }
+
+  /* Founder Profile */
+  .founder-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    align-items: center;
+  }
+
+  @media (min-width: 768px) {
+    .founder-grid {
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: var(--space-7);
+    }
+  }
+
+  .founder-visual {
+    display: flex;
+    justify-content: center;
+  }
+
+  .founder-image-wrapper {
+    width: 100%;
+    max-width: 260px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-card-hover);
+    border: 3px solid var(--color-honey-500);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .founder-image-wrapper:hover {
+    transform: rotate(1deg) scale(1.02);
+  }
+
+  .founder-img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+    display: block;
+  }
+
+  .founder-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .founder-role {
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    color: var(--color-brown-500);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: var(--space-3);
+  }
+
+  .founder-contact-action {
+    margin-top: var(--space-3);
+  }
+
+  /* Mission / Vision */
+  .mv-card {
+    background-color: var(--color-white);
+    border: 1px solid rgba(92, 58, 33, 0.08);
+    border-radius: var(--radius-md);
+    padding: var(--space-5);
+    box-shadow: var(--shadow-card);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .mv-icon-wrapper {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-pill);
+    background-color: rgba(245, 197, 66, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-2);
+  }
+
+  .mv-card h3 {
+    font-size: 1.2rem;
+    color: var(--color-brown-900);
+    margin-bottom: 0;
+  }
+
+  /* Values */
+  .value-card {
+    background-color: var(--color-white);
+    border: 1px solid rgba(92, 58, 33, 0.08);
+    border-radius: var(--radius-md);
+    padding: var(--space-5);
+    box-shadow: var(--shadow-card);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .value-num {
+    font-size: var(--font-size-xl);
+    font-weight: 800;
+    color: rgba(245, 197, 66, 0.4);
+    font-family: "Manrope", sans-serif;
+  }
+
+  .value-card h4 {
+    font-size: 1.05rem;
+    color: var(--color-brown-900);
+    margin-bottom: 0;
+  }
+
+  .value-card p {
+    font-size: 0.85rem;
+    color: var(--color-gray-500);
+    margin-bottom: 0;
+    line-height: 1.5;
+  }
+
+  /* Timeline */
+  .timeline-wrapper {
+    position: relative;
+    max-width: 700px;
+    margin-inline: auto;
+    padding-left: 20px;
+  }
+
+  @media (min-width: 640px) {
+    .timeline-wrapper {
+      padding-left: 0;
+    }
+  }
+
+  .timeline-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 20px;
+    width: 3px;
+    background-color: var(--color-gray-300);
+  }
+
+  @media (min-width: 640px) {
+    .timeline-line {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: var(--space-6);
+  }
+
+  @media (min-width: 640px) {
+    .timeline-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: var(--space-7);
+    }
+
+    .timeline-item:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+  }
+
+  .timeline-badge-year {
+    position: absolute;
+    left: -12px;
+    top: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: var(--color-honey-500);
+    color: var(--color-black-soft);
+    font-weight: 700;
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(245, 197, 66, 0.2);
+    z-index: 5;
+    font-family: "Manrope", sans-serif;
+  }
+
+  @media (min-width: 640px) {
+    .timeline-badge-year {
+      left: 50%;
+      transform: translateX(-50%);
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .timeline-content {
+    background-color: var(--color-white);
+    border: 1px solid rgba(92, 58, 33, 0.08);
+    border-radius: var(--radius-md);
+    padding: var(--space-4) var(--space-5);
+    box-shadow: var(--shadow-card);
+    margin-left: 36px;
+  }
+
+  @media (min-width: 640px) {
+    .timeline-content {
+      width: 42%;
+      margin-left: 0;
+    }
+  }
+
+  .timeline-content h4 {
+    font-size: 1.1rem;
+    color: var(--color-brown-900);
+    margin-bottom: 4px;
+  }
+
+  .timeline-content p {
+    font-size: 0.85rem;
+    color: var(--color-gray-500);
+    margin-bottom: 0;
+    line-height: 1.5;
+  }
+
+  /* CTA */
+  .cta-container {
+    max-width: 1000px;
+  }
+
+  .cta-inner-card {
+    background: rgba(46, 27, 16, 0.75);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(245, 197, 66, 0.3);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5) var(--space-5);
+    text-align: center;
+    box-shadow: 0 12px 42px rgba(46, 27, 16, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-3);
+  }
+
+  @media (min-width: 768px) {
+    .cta-inner-card {
+      padding: var(--space-6) var(--space-7);
+      gap: var(--space-4);
+    }
+  }
+
+  .cta-inner-card h2 {
+    color: var(--color-white);
+    margin-bottom: 0;
+    max-width: 600px;
+  }
+
+  .cta-inner-card p {
+    color: var(--color-gray-300);
+    font-size: var(--font-size-lg);
+    line-height: 1.6;
+    margin-bottom: 0;
+    max-width: 700px;
+  }
+
+  .cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    justify-content: center;
+    margin-top: var(--space-2);
+    width: 100%;
+  }
+
+  .cta-buttons :global(.btn) {
+    width: 100%;
+  }
+
+  @media (min-width: 640px) {
+    .cta-buttons :global(.btn) {
+      width: auto;
+    }
+  }
+</style>

@@ -1,0 +1,63 @@
+---
+interface Props {
+  variant?: "primary" | "secondary" | "success" | "warning" | "error" | "info" | "neutral";
+  className?: string;
+}
+
+const { variant = "neutral", className = "" } = Astro.props;
+---
+
+<span class={`badge badge-${variant} ${className}`}>
+  <slot />
+</span>
+
+<style>
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--space-1) var(--space-3);
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    line-height: 1.2;
+    border-radius: var(--radius-pill);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    width: fit-content;
+    white-space: nowrap;
+  }
+
+  .badge-neutral {
+    background-color: var(--color-gray-100);
+    color: var(--color-gray-700);
+  }
+
+  .badge-primary {
+    background-color: rgba(245, 197, 66, 0.15);
+    color: var(--color-honey-700);
+  }
+
+  .badge-secondary {
+    background-color: rgba(139, 94, 52, 0.1);
+    color: var(--color-brown-700);
+  }
+
+  .badge-success {
+    background-color: rgba(78, 122, 67, 0.12);
+    color: var(--color-success);
+  }
+
+  .badge-warning {
+    background-color: rgba(198, 123, 25, 0.12);
+    color: var(--color-warning);
+  }
+
+  .badge-error {
+    background-color: rgba(184, 69, 61, 0.12);
+    color: var(--color-error);
+  }
+
+  .badge-info {
+    background-color: rgba(75, 112, 138, 0.12);
+    color: var(--color-info);
+  }
+</style>
